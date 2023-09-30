@@ -9,8 +9,6 @@ import UIKit
 
 protocol HomeViewModelProtocol {
     var fetchSections: [HomeCellSection] { get }
-//    var onFetchSectionsChange: (([TableSectionProtocol]) -> Void)? { get set }
-
 }
 
 class HomeView: UIView {

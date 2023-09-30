@@ -12,6 +12,8 @@ protocol WelcomeViewModelProtocol: welcomeProtocol {
 }
 
 class WelcomeViewModel: WelcomeViewModelProtocol {
+    var titleLabel: String = ""
+    
     var onTapStartButton: (() -> Void)? 
     
     func didTapStartButton() {

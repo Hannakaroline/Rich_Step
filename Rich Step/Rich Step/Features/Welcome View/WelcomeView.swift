@@ -18,7 +18,6 @@ class WelcomeView: UIView {
     
     // MARK: - Private properties
     private var viewModel: welcomeProtocol?
-    private var navigationController = UINavigationController()
     
     // MARK: - Life Cycle
     override func awakeFromNib() {
@@ -37,7 +36,7 @@ class WelcomeView: UIView {
         viewModel?.didTapStartButton()
     }
     
-    func setupStartButton(){
+    func setupStartButton() {
         startButton.tintColor = .blue
         startButton.addTarget(self, action: #selector(didTapStartButton), for: .touchUpInside)
     }

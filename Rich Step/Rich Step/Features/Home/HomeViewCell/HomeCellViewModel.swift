@@ -7,16 +7,18 @@
 
 import Foundation
 
-class HomeCellViewModel {
+protocol HomeCellViewModelProtocol: HomeCellProtocol {
+    var onTapDetailsButton: (() -> Void)? { get set }
+}
+
+class HomeCellViewModel: HomeCellViewModelProtocol {
 
     var homeCellModel: HomeModel
     
     init(homeCellModel: HomeModel) {
         self.homeCellModel = homeCellModel
     }
-}
-
-extension HomeCellViewModel: HomeCellViewModelProtocol {
+    var onTapDetailsButton: (() -> Void)?
     
     var dateLabel: String? {
         return homeCellModel.date
@@ -24,5 +26,9 @@ extension HomeCellViewModel: HomeCellViewModelProtocol {
     
     var valueLabel: String? {
         return homeCellModel.value
+    }
+    
+    func didTapDetails() {
+        onTapDetailsButton?()
     }
 }
