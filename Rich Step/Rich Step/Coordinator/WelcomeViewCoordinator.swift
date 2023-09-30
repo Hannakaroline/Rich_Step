@@ -1,5 +1,5 @@
 //
-//  SpendingCoordinator.swift
+//  WelcomeViewCoordinator.swift
 //  Rich Step
 //
 //  Created by Hanna on 29/09/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SpendingCoordinator: CoordinatorProtocol, SpendingListControllerDelegateProtocol {
+class WelcomeViewCoordinator: CoordinatorProtocol, SpendingListControllerDelegateProtocol {
 
     // MARK: Public properties
     weak var childDelegate: ChildCoordinatorDelegate?
@@ -21,9 +21,9 @@ class SpendingCoordinator: CoordinatorProtocol, SpendingListControllerDelegatePr
 
     // MARK: Start
     func start() -> UIViewController {
-        let spendListViewController = SpendListFactory.spendList(delegate: self)
+        let welcomeViewController = WelcomeViewFactory.welcomeView(delegate: self)
         navigationController.modalPresentationStyle = .fullScreen
-        navigationController.setViewControllers([spendListViewController], animated: true)
+        navigationController.setViewControllers([welcomeViewController], animated: true)
         return navigationController
     }
 }

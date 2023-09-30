@@ -1,5 +1,5 @@
 //
-//  SpendingListController.swift
+//  HomeController.swift
 //  Rich Step
 //
 //  Created by Hanna on 29/09/23.
@@ -7,18 +7,20 @@
 
 import UIKit
 
-protocol SpendingListControllerDelegateProtocol: AnyObject {}
+protocol HomeControllerDelegateProtocol: AnyObject {}
 
-class SpendingListController: UIViewController {
-    
+class HomeController<ViewModel: HomeViewModelProtocol>: UIViewController {
+   
     // MARK: - Private properties
-    private let contentView: SpendingView
-    private weak var delegate: SpendingListControllerDelegateProtocol?
+    private let contentView: HomeView
+    private let viewModel: ViewModel
+    private weak var delegate: HomeControllerDelegateProtocol?
     
     // MARK: - Init
-    init(delegate: SpendingListControllerDelegateProtocol?){
+    init(viewModel: ViewModel, delegate: HomeControllerDelegateProtocol?) {
+        self.viewModel = viewModel
         self.delegate = delegate
-        self.contentView = SpendingView.loadNib()
+        self.contentView = HomeView.loadNib()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -34,5 +36,6 @@ class SpendingListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.bindIn(viewModel: viewModel)
     }
 }
