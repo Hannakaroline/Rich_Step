@@ -1,26 +1,25 @@
 //
-//  HomeView.swift
+//  SpendDetail.swift
 //  Rich Step
 //
-//  Created by Hanna on 29/09/23.
+//  Created by Hanna on 30/09/23.
 //
 
 import UIKit
 
-protocol HomeViewModelProtocol {
-    var fetchSections: [HomeCellSection] { get }
-//    var onFetchSectionsChange: (([TableSectionProtocol]) -> Void)? { get set }
-
+protocol SpendDetailProtocol {
+//    var fetchSection: [] { get }
 }
 
-class HomeView: UIView {
+class SpendDetail: UIView {
     
     // MARK: - UI Components
-    @IBOutlet var title: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var valueLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Private properties
-    private var viewModel: HomeViewModelProtocol?
+    private var viewModel: SpendDetailProtocol?
     private var tableViewDataSource = TableViewDataSource()
     
     override func awakeFromNib() {
@@ -29,17 +28,17 @@ class HomeView: UIView {
     }
     
     // MARK: - Bind
-    func bindIn(viewModel: HomeViewModelProtocol) {
+    func bind(viewModel: SpendDetailProtocol) {
         self.viewModel = viewModel
-        self.tableViewDataSource.sections = viewModel.fetchSections
+//        self.tableViewDataSource.sections = viewModel.fetchSections
     }
 }
-extension HomeView {
+
+extension SpendDetail {
     
     private func setup() {
         setupTableView()
         tableViewDataSource.tableView = tableView
-        title.text = "Spending List"
     }
     
     private func setupTableView() {

@@ -16,7 +16,7 @@ class HomeViewModel: HomeViewModelProtocol {
     
     private func homeSections() -> HomeCellSection {
         HomeCellSection(
-            viewModel: HomeCellModel.allCases.map {
+            viewModel: HomeModel.allCases.map {
             HomeCellViewModel(homeCellModel: $0)
         })
     }

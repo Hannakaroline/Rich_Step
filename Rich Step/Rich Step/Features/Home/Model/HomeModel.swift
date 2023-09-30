@@ -1,5 +1,5 @@
 //
-//  HomeCellModel.swift
+//  HomeModel.swift
 //  Rich Step
 //
 //  Created by Hanna on 30/09/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HomeCellModel: CaseIterable {
+enum HomeModel: CaseIterable {
     case sectionOne
     case sectionTwo
     

@@ -26,4 +26,8 @@ class HomeCoordinator: CoordinatorProtocol, HomeControllerDelegateProtocol {
         navigationController.setViewControllers([home], animated: true)
         return navigationController
     }
+    
+    // TODO: Go to
+//    func goToDetails() {
+//    }
 }
