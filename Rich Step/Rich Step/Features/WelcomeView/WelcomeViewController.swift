@@ -7,16 +7,20 @@
 
 import UIKit
 
-protocol SpendingListControllerDelegateProtocol: AnyObject {}
+protocol welcomeViewDelegateProtocol: AnyObject {
+    func goToHome()
+}
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController<ViewModel: WelcomeViewModelProtocol>: UIViewController {
     
     // MARK: - Private properties
     private let contentView: WelcomeView
-    private weak var delegate: SpendingListControllerDelegateProtocol?
+    private var viewModel: ViewModel
+    private weak var delegate: welcomeViewDelegateProtocol?
     
     // MARK: - Init
-    init(delegate: SpendingListControllerDelegateProtocol?){
+    init(viewModel: ViewModel, delegate: welcomeViewDelegateProtocol?){
+        self.viewModel = viewModel
         self.delegate = delegate
         self.contentView = WelcomeView.loadNib()
         super.init(nibName: nil, bundle: nil)
@@ -34,5 +38,14 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
+    }
+    
+    private func bind() {
+        contentView.bindIn(viewModel: viewModel)
+        
+        viewModel.onTapStartButton = { [weak self] in
+            self?.delegate?.goToHome()
+        }
     }
 }

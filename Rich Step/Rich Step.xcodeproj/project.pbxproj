@@ -41,6 +41,7 @@
 		F5A052692AC8109A00C27C7B /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A052682AC8109A00C27C7B /* UITableView+Reusable.swift */; };
 		F5A0526C2AC8287800C27C7B /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A0526A2AC8287800C27C7B /* HomeViewCell.swift */; };
 		F5A0526D2AC8287800C27C7B /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A0526B2AC8287800C27C7B /* HomeViewCell.xib */; };
+		F5A052712AC839C700C27C7B /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A052702AC839C700C27C7B /* WelcomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		F5A052682AC8109A00C27C7B /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		F5A0526A2AC8287800C27C7B /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		F5A0526B2AC8287800C27C7B /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		F5A052702AC839C700C27C7B /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +207,7 @@
 		F5A0521A2AC6C91400C27C7B /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				F5A052292AC6F03000C27C7B /* SpendingList */,
+				F5A052292AC6F03000C27C7B /* WelcomeView */,
 				F5A052262AC6E93100C27C7B /* Home */,
 			);
 			path = Features;
@@ -234,14 +236,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		F5A052292AC6F03000C27C7B /* SpendingList */ = {
+		F5A052292AC6F03000C27C7B /* WelcomeView */ = {
 			isa = PBXGroup;
 			children = (
-				F5A0521B2AC6C99200C27C7B /* WelcomeViewController.swift */,
 				F5A0521D2AC6CB2700C27C7B /* WelcomeView.xib */,
 				F5A0521F2AC6CB4D00C27C7B /* WelcomeView.swift */,
+				F5A0521B2AC6C99200C27C7B /* WelcomeViewController.swift */,
+				F5A052702AC839C700C27C7B /* WelcomeViewModel.swift */,
 			);
-			path = SpendingList;
+			path = WelcomeView;
 			sourceTree = "<group>";
 		};
 		F5A0523D2AC71E4700C27C7B /* Factories */ = {
@@ -431,6 +434,7 @@
 				F5A0523C2AC7092800C27C7B /* HomeController.swift in Sources */,
 				F5A0525A2AC739D000C27C7B /* TableProtocols.swift in Sources */,
 				F5A0524D2AC72CCA00C27C7B /* HomeCellModel.swift in Sources */,
+				F5A052712AC839C700C27C7B /* WelcomeViewModel.swift in Sources */,
 				F5A052232AC6CD8700C27C7B /* UIView+Nib.swift in Sources */,
 				F5A052412AC7262E00C27C7B /* HomeCoordinator.swift in Sources */,
 				F5A0526C2AC8287800C27C7B /* HomeViewCell.swift in Sources */,

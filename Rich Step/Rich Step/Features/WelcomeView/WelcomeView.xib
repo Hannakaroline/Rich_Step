@@ -50,8 +50,8 @@
                 <constraint firstItem="mzx-ph-HLE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="64" id="lkV-CZ-Bds"/>
             </constraints>
             <connections>
-                <outlet property="button" destination="xPq-Ux-Oeb" id="Zq6-8U-QJb"/>
                 <outlet property="logoImage" destination="mzx-ph-HLE" id="lTb-o8-7m5"/>
+                <outlet property="startButton" destination="xPq-Ux-Oeb" id="Zq6-8U-QJb"/>
                 <outlet property="titleLabel" destination="2F9-8M-Ozx" id="EGS-Ll-Elv"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="99.776785714285708"/>

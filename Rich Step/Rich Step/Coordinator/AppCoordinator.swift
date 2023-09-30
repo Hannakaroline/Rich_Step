@@ -23,9 +23,8 @@ class AppCoordinator {
     }
     
     private func coordinatorDefault() -> UIViewController {
-    // CHANGE
-    let spendingCoordinator = HomeCoordinator()
-        childCoordinator = spendingCoordinator
-        return spendingCoordinator.start()
+    let welcomeCoordinator = WelcomeViewCoordinator()
+        childCoordinator = welcomeCoordinator
+        return welcomeCoordinator.start()
     }
 }

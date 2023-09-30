@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WelcomeViewCoordinator: CoordinatorProtocol, SpendingListControllerDelegateProtocol {
+class WelcomeViewCoordinator: CoordinatorProtocol, welcomeViewDelegateProtocol {
 
     // MARK: Public properties
     weak var childDelegate: ChildCoordinatorDelegate?
@@ -25,5 +25,12 @@ class WelcomeViewCoordinator: CoordinatorProtocol, SpendingListControllerDelegat
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.setViewControllers([welcomeViewController], animated: true)
         return navigationController
+    }
+    
+    func goToHome() {
+        let homeController = HomeCoordinator()
+        homeController.childDelegate = self
+        childCoordinator = homeController
+        navigationController.present(homeController.start(), animated: true)
     }
 }
