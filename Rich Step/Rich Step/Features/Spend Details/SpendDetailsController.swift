@@ -1,27 +1,26 @@
 //
-//  HomeController.swift
+//  SpendDetailsController.swift
 //  Rich Step
 //
-//  Created by Hanna on 29/09/23.
+//  Created by Hanna on 01/10/23.
 //
 
 import UIKit
+protocol SpendControllerDelegateProtocol: AnyObject {}
 
-protocol HomeControllerDelegateProtocol: AnyObject {}
-
-class HomeController<ViewModel: HomeViewModelProtocol>: UIViewController {
-   
-    // MARK: - Private properties
-    private let contentView: HomeView
-    private let viewModel: ViewModel
-    private weak var delegate: HomeControllerDelegateProtocol?
+class SpendDetailsController<ViewModel: SpendDetailProtocol>: UIViewController {
     
-    // MARK: - Init
-    init(viewModel: ViewModel, delegate: HomeControllerDelegateProtocol?) {
+    // MARK: - Private properties
+    private let contentView: SpendDetail
+    private let viewModel: ViewModel
+    private weak var delegate: SpendControllerDelegateProtocol?
+    
+    // MARK: Init
+   init(viewModel: ViewModel, delegate: SpendControllerDelegateProtocol?) {
         self.viewModel = viewModel
         self.delegate = delegate
-        self.contentView = HomeView.loadNib()
-        super.init(nibName: nil, bundle: nil)
+       self.contentView = SpendDetail.loadNib()
+       super.init(nibName: nil, bundle: nil)
     }
     
     @available(*, unavailable)

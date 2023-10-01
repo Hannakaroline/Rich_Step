@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SpendDetailProtocol {
-//    var fetchSection: [] { get }
+    var fetchSections: [DetailsCellSection] { get }
 }
 
 class SpendDetail: UIView {
@@ -27,21 +27,16 @@ class SpendDetail: UIView {
         setup()
     }
     
-    // MARK: - Bind
-    func bind(viewModel: SpendDetailProtocol) {
+    // MARK: - BindIn
+    func bindIn(viewModel: SpendDetailProtocol) {
         self.viewModel = viewModel
-//        self.tableViewDataSource.sections = viewModel.fetchSections
+        self.tableViewDataSource.sections = viewModel.fetchSections
     }
 }
 
 extension SpendDetail {
     
     private func setup() {
-        setupTableView()
         tableViewDataSource.tableView = tableView
-    }
-    
-    private func setupTableView() {
-        tableView.isScrollEnabled = false
     }
 }

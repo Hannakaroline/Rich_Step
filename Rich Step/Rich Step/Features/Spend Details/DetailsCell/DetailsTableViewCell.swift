@@ -10,6 +10,7 @@ import UIKit
 protocol DetailsTableViewCellProtocol {
     var nameLabel: String? { get }
     var dateLabel: String? { get }
+    var valueLabel: String? { get }
 }
 
 class DetailsTableViewCell: UITableViewCell {

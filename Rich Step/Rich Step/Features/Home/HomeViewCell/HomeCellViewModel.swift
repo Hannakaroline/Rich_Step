@@ -15,6 +15,7 @@ class HomeCellViewModel: HomeCellViewModelProtocol {
 
     var homeCellModel: HomeModel
     
+    // MARK: - Init
     init(homeCellModel: HomeModel) {
         self.homeCellModel = homeCellModel
     }

@@ -7,16 +7,27 @@
 
 import Foundation
 
-class DetailsCellViewModel {
-//    var detailsViewModel:
+protocol DetailsCellViewModelProtocol: DetailsTableViewCellProtocol {
     
 }
-extension DetailsCellViewModel: DetailsTableViewCellProtocol {
+class DetailsCellViewModel: DetailsCellViewModelProtocol {
+    
+    var detailsViewModel: DetailsModel
+    
+    // MARK: - Init
+    init(detailsViewModel: DetailsModel) {
+        self.detailsViewModel = detailsViewModel
+    }
+    
     var nameLabel: String? {
-        ""
+        return detailsViewModel.name
     }
     
     var dateLabel: String? {
-        ""
+        return detailsViewModel.date
+    }
+    
+    var valueLabel: String? {
+        return detailsViewModel.value
     }
 }

@@ -1,5 +1,5 @@
 //
-//  HomeCellSection.swift
+//  DetailsCellSection.swift
 //  Rich Step
 //
 //  Created by Hanna on 30/09/23.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class HomeCellSection: TableSectionProtocol {
+class DetailsCellSection: TableSectionProtocol {
     
     // MARK: - Private properties
-    private let viewModel: [HomeCellViewModelProtocol]
+    private let viewModel: [DetailsTableViewCellProtocol]
     
-    init(viewModel: [HomeCellViewModelProtocol]) {
+    init(viewModel: [DetailsTableViewCellProtocol]) {
         self.viewModel = viewModel
     }
     
@@ -21,7 +21,7 @@ class HomeCellSection: TableSectionProtocol {
     }
     
     func cellType() -> UITableViewCell.Type {
-        HomeViewCell.self
+        DetailsTableViewCell.self
     }
     
     func rowheight() -> CGFloat? {
@@ -29,9 +29,8 @@ class HomeCellSection: TableSectionProtocol {
     }
     
     func configureCell(cell: UITableViewCell, at row: Int) {
-        if let cell = cell as? HomeViewCell, row < itemsCount {
+        if let cell = cell as? DetailsTableViewCell, row < itemsCount {
             cell.bindIn(viewModel: viewModel[row])
         }
     }
-    
 }

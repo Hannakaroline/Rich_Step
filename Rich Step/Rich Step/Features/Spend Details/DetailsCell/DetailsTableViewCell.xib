@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCU-S1-Jub">
-                        <rect key="frame" x="305.5" y="8" width="44.5" height="69"/>
+                        <rect key="frame" x="302" y="8" width="48" height="69"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="arrow.right.to.line.alt" catalog="system"/>
                     </button>

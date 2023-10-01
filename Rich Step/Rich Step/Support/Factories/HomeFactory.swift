@@ -12,4 +12,9 @@ class HomeFactory {
         let viewModel = HomeViewModel()
         return HomeController(viewModel: viewModel, delegate: delegate)
     }
+    
+//    static func spendDetails() -> UIViewController {
+//        let detailsViewModel = DetailsCellViewModel()
+//        return
+//    }
 }

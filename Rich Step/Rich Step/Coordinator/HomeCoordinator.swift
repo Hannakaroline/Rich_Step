@@ -28,6 +28,6 @@ class HomeCoordinator: CoordinatorProtocol, HomeControllerDelegateProtocol {
     }
     
     // TODO: Go to
-//    func goToDetails() {
-//    }
+    func goToDetails() {
+    }
 }
