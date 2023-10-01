@@ -8,7 +8,7 @@
 import Foundation
 protocol DetailsViewModelProtocol: SpendDetailProtocol { }
 
-class SpendingDetailsViewModel: DetailsViewModelProtocol {
+class SpendDetailsViewModel: DetailsViewModelProtocol {
     
     // MARK: - Public properties
     var fetchSections: [DetailsCellSection] {
