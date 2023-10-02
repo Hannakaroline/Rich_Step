@@ -15,7 +15,7 @@ class WelcomeView: UIView {
     // MARK: - UI Components
     @IBOutlet var startButton: UIButton!
     @IBOutlet var logoImage: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+
     
     // MARK: - Private properties
     private var viewModel: welcomeProtocol?
@@ -23,8 +23,6 @@ class WelcomeView: UIView {
     // MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLabel.textColor = .red
-        titleLabel.text = "For your dream"
         setupStartButton()
     }
     
@@ -37,8 +35,8 @@ class WelcomeView: UIView {
         viewModel?.didTapStartButton()
     }
     
-    func setupStartButton() {
-        startButton.tintColor = .blue
+    func setupStartButton(){
+        startButton.backgroundColor = UIColor(red: 23, green: 142, blue: 212, alpha: 1.0)
         startButton.addTarget(self, action: #selector(didTapStartButton), for: .touchUpInside)
     }
 }

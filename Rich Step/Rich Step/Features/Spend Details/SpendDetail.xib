@@ -15,35 +15,35 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmj-yq-lWc">
-                    <rect key="frame" x="16" y="52" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="16" y="60" width="48" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOQ-qw-n8y">
-                    <rect key="frame" x="356" y="52" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="350" y="60" width="48" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gEG-SV-JJn">
-                    <rect key="frame" x="0.0" y="89" width="414" height="773"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gEG-SV-JJn">
+                    <rect key="frame" x="16" y="100" width="382" height="778"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="oOQ-qw-n8y" firstAttribute="leading" secondItem="Rmj-yq-lWc" secondAttribute="trailing" constant="298" id="3ME-un-mS7"/>
-                <constraint firstItem="Rmj-yq-lWc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="3ay-pz-jB9"/>
-                <constraint firstItem="oOQ-qw-n8y" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="V7U-Y1-YeX"/>
-                <constraint firstItem="gEG-SV-JJn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XFP-lK-eCJ"/>
-                <constraint firstItem="gEG-SV-JJn" firstAttribute="top" secondItem="Rmj-yq-lWc" secondAttribute="bottom" constant="16" id="XYG-OL-jHa"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gEG-SV-JJn" secondAttribute="bottom" id="hRe-al-LnZ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oOQ-qw-n8y" secondAttribute="trailing" constant="16" id="kJG-rx-IY9"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gEG-SV-JJn" secondAttribute="trailing" id="u26-GL-IqK"/>
-                <constraint firstItem="Rmj-yq-lWc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="vTE-oU-hDG"/>
+                <constraint firstItem="Rmj-yq-lWc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="2CC-bS-BAM"/>
+                <constraint firstItem="Rmj-yq-lWc" firstAttribute="leading" secondItem="gEG-SV-JJn" secondAttribute="leading" id="ALG-ap-kOe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oOQ-qw-n8y" secondAttribute="trailing" constant="16" id="FOa-ci-rpK"/>
+                <constraint firstItem="Rmj-yq-lWc" firstAttribute="baseline" secondItem="oOQ-qw-n8y" secondAttribute="baseline" id="XFg-ZN-OBh"/>
+                <constraint firstItem="gEG-SV-JJn" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="16" id="aI8-8F-BFT"/>
+                <constraint firstItem="gEG-SV-JJn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="hNq-ip-KUr"/>
+                <constraint firstItem="gEG-SV-JJn" firstAttribute="top" secondItem="Rmj-yq-lWc" secondAttribute="bottom" constant="16" id="mSw-C8-BnN"/>
+                <constraint firstAttribute="trailing" secondItem="gEG-SV-JJn" secondAttribute="trailing" constant="16" id="vnr-6V-UoF"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="tableView" destination="gEG-SV-JJn" id="idW-Pa-CPT"/>
                 <outlet property="titleLabel" destination="Rmj-yq-lWc" id="Bwj-Sd-lDR"/>

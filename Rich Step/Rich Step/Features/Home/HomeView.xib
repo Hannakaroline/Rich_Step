@@ -15,27 +15,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsi-oV-DRN" userLabel="title">
-                    <rect key="frame" x="16" y="52" width="382" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="16" y="52" width="382" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Uxh-u9-ijz">
-                    <rect key="frame" x="0.0" y="73" width="414" height="789"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Uxh-u9-ijz">
+                    <rect key="frame" x="16" y="92" width="382" height="786"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <color key="separatorColor" systemColor="linkColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Uxh-u9-ijz" secondAttribute="trailing" id="H28-7M-TEL"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Fsi-oV-DRN" secondAttribute="trailing" constant="16" id="M3y-X5-BhW"/>
-                <constraint firstItem="Uxh-u9-ijz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Nvv-XH-HTN"/>
-                <constraint firstItem="Fsi-oV-DRN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="PfP-t3-Rt8"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Uxh-u9-ijz" secondAttribute="bottom" id="QTz-rd-CZN"/>
-                <constraint firstItem="Uxh-u9-ijz" firstAttribute="top" secondItem="Fsi-oV-DRN" secondAttribute="bottom" id="WJF-Yb-oR5"/>
-                <constraint firstItem="Fsi-oV-DRN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ngy-sA-DLr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Uxh-u9-ijz" secondAttribute="trailing" constant="16" id="3lm-Id-7Ip"/>
+                <constraint firstItem="Uxh-u9-ijz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="G7v-2r-qLw"/>
+                <constraint firstItem="Fsi-oV-DRN" firstAttribute="leading" secondItem="Uxh-u9-ijz" secondAttribute="leading" id="GcS-Vp-URt"/>
+                <constraint firstItem="Fsi-oV-DRN" firstAttribute="trailing" secondItem="Uxh-u9-ijz" secondAttribute="trailing" id="KPy-5k-nHJ"/>
+                <constraint firstItem="Fsi-oV-DRN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Nv9-DZ-bxb"/>
+                <constraint firstItem="Uxh-u9-ijz" firstAttribute="top" secondItem="Fsi-oV-DRN" secondAttribute="bottom" constant="16" id="gJZ-Tq-0Ma"/>
+                <constraint firstItem="Uxh-u9-ijz" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="16" id="jef-Ga-Uzh"/>
             </constraints>
             <connections>
                 <outlet property="tableView" destination="Uxh-u9-ijz" id="wpd-Sx-cfb"/>
@@ -45,9 +44,6 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

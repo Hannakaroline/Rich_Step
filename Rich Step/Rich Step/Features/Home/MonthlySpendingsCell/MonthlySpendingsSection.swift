@@ -31,7 +31,7 @@ class MonthlySpendingsSection: TableSectionProtocol, SpendControllerDelegate {
     }
     
     func rowheight() -> CGFloat? {
-        40
+        80
     }
     
     func configureCell(cell: UITableViewCell, at row: Int) {

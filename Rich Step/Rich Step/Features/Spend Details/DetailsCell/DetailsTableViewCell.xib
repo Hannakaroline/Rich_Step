@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="KGk-i7-Jjw" customClass="DetailsTableViewCell" customModule="Rich_Step" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="85" id="KGk-i7-Jjw" customClass="DetailsTableViewCell" customModule="Rich_Step" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="354" height="85"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -17,43 +17,44 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2i-Ni-Wqp">
-                        <rect key="frame" x="4" y="4" width="42" height="21"/>
+                        <rect key="frame" x="8" y="8" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qna-wG-mQg">
-                        <rect key="frame" x="4" y="29" width="42" height="52"/>
+                        <rect key="frame" x="8" y="37" width="42" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5i-9G-Dat">
-                        <rect key="frame" x="304" y="8" width="42" height="69"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5i-9G-Dat">
+                        <rect key="frame" x="200" y="8" width="42" height="69"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCU-S1-Jub">
-                        <rect key="frame" x="302" y="8" width="48" height="69"/>
+                        <rect key="frame" x="243" y="8" width="107" height="69"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="arrow.right.to.line.alt" catalog="system"/>
+                        <buttonConfiguration key="configuration" style="plain" image="arrow.right.to.line.alt" catalog="system">
+                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                        </buttonConfiguration>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="UCU-S1-Jub" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="0Z2-C0-6FO"/>
-                    <constraint firstAttribute="trailing" secondItem="F5i-9G-Dat" secondAttribute="trailing" constant="8" id="4wq-UB-DS6"/>
-                    <constraint firstItem="I2i-Ni-Wqp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="5h4-Ex-qZT"/>
-                    <constraint firstAttribute="trailing" secondItem="UCU-S1-Jub" secondAttribute="trailing" constant="4" id="8Ab-dE-V3f"/>
-                    <constraint firstAttribute="bottom" secondItem="F5i-9G-Dat" secondAttribute="bottom" constant="8" id="EGr-eF-KdG"/>
-                    <constraint firstItem="Qna-wG-mQg" firstAttribute="top" secondItem="I2i-Ni-Wqp" secondAttribute="bottom" constant="4" id="FHX-Te-4BB"/>
-                    <constraint firstItem="Qna-wG-mQg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="YWl-d6-Y4f"/>
-                    <constraint firstItem="F5i-9G-Dat" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ZNB-Cv-6i6"/>
-                    <constraint firstAttribute="bottom" secondItem="Qna-wG-mQg" secondAttribute="bottom" constant="4" id="d3L-o8-UKG"/>
-                    <constraint firstAttribute="bottom" secondItem="UCU-S1-Jub" secondAttribute="bottom" constant="8" id="nBg-XN-DDF"/>
-                    <constraint firstItem="F5i-9G-Dat" firstAttribute="leading" secondItem="Qna-wG-mQg" secondAttribute="trailing" constant="258" id="qU1-Re-Lgi"/>
-                    <constraint firstItem="F5i-9G-Dat" firstAttribute="leading" secondItem="I2i-Ni-Wqp" secondAttribute="trailing" constant="258" id="yfB-l4-ZXf"/>
-                    <constraint firstItem="I2i-Ni-Wqp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="yyS-cf-r1Q"/>
+                    <constraint firstItem="I2i-Ni-Wqp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="7NT-uf-1yJ"/>
+                    <constraint firstItem="Qna-wG-mQg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Bxg-oZ-35x"/>
+                    <constraint firstAttribute="bottom" secondItem="Qna-wG-mQg" secondAttribute="bottom" constant="4" id="DLD-fY-TsG"/>
+                    <constraint firstAttribute="trailing" secondItem="UCU-S1-Jub" secondAttribute="trailing" constant="4" id="GgK-OA-1VC"/>
+                    <constraint firstItem="Qna-wG-mQg" firstAttribute="top" secondItem="I2i-Ni-Wqp" secondAttribute="bottom" constant="8" id="MIr-Zt-0Pc"/>
+                    <constraint firstItem="I2i-Ni-Wqp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Pgg-iq-hpy"/>
+                    <constraint firstItem="F5i-9G-Dat" firstAttribute="leading" secondItem="I2i-Ni-Wqp" secondAttribute="trailing" constant="150" id="Qr8-ke-KoR"/>
+                    <constraint firstItem="UCU-S1-Jub" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="S3q-WI-7fq"/>
+                    <constraint firstItem="UCU-S1-Jub" firstAttribute="leading" secondItem="F5i-9G-Dat" secondAttribute="trailing" constant="1" id="Yhd-zI-yyo"/>
+                    <constraint firstAttribute="bottom" secondItem="F5i-9G-Dat" secondAttribute="bottom" constant="8" id="w1g-ig-L9p"/>
+                    <constraint firstItem="F5i-9G-Dat" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="w2d-s9-ybo"/>
+                    <constraint firstAttribute="bottom" secondItem="UCU-S1-Jub" secondAttribute="bottom" constant="8" id="xLz-Xs-zaT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -68,5 +69,8 @@
     </objects>
     <resources>
         <image name="arrow.right.to.line.alt" catalog="system" width="128" height="101"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

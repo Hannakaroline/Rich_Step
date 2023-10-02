@@ -38,5 +38,6 @@ extension SpendDetail {
     
     private func setup() {
         tableViewDataSource.tableView = tableView
+        titleLabel.text = "Total Amount"
     }
 }

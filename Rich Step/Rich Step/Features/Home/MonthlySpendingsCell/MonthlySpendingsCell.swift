@@ -20,6 +20,7 @@ class MonthlySpendingsCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
     @IBOutlet var openButton: UIButton!
+    @IBOutlet weak var cardView: UIView!
     
     private var viewModel: MonthlySpendingsCellProtocol?
     
@@ -42,10 +43,18 @@ class MonthlySpendingsCell: UITableViewCell {
 
 extension MonthlySpendingsCell {
     func setup() {
-        contentView.backgroundColor = .clear
+        cardView.backgroundColor = .clear
     }
     
     func setupOpenDetailsButton() {
         openButton.addTarget(self, action: #selector(didTapDetails), for: .touchUpInside)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0))
+        contentView.layer.borderColor = UIColor.gray.cgColor
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.cornerRadius = 8
     }
 }

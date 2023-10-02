@@ -43,4 +43,12 @@ extension DetailsTableViewCell {
     func setup() {
         contentView.backgroundColor = .clear
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0))
+        contentView.layer.borderColor = UIColor.gray.cgColor
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.cornerRadius = 8
+    }
 }
