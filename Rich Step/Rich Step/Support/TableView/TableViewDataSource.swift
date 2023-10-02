@@ -65,7 +65,6 @@ extension TableViewDataSource: UITableViewDelegate, UITableViewDataSource {
         let row = indexPath.row
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: section.cellType())
         section.configureCell(cell: cell, at: row)
-//        cell.backgroundColor = .clear
         return cell
     }
     
@@ -77,5 +76,5 @@ extension TableViewDataSource: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
+
 }

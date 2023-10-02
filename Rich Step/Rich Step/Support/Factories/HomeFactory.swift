@@ -8,13 +8,13 @@
 import UIKit
 
 class HomeFactory {
-    static func home(delegate: HomeControllerDelegateProtocol?) -> UIViewController {
-        let viewModel = HomeViewModel()
-        return HomeController(viewModel: viewModel, delegate: delegate)
+    static func home(coordinator: HomeCoordinator) -> UIViewController {
+        let viewModel = HomeViewModel(homeCoordinator: coordinator)
+        return HomeController(viewModel: viewModel)
     }
     
-//    static func spendDetails() -> UIViewController {
-//        let detailsViewModel = DetailsCellViewModel()
-//        return
-//    }
+    static func spendDetails(delegate: SpendControllerDelegate?) -> UIViewController {
+        let detailsViewModel = SpendDetailsViewModel()
+        return SpendDetailsController(viewModel: detailsViewModel, delegate: delegate)
+    }
 }

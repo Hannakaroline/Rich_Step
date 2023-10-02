@@ -7,19 +7,15 @@
 
 import UIKit
 
-protocol HomeControllerDelegateProtocol: AnyObject {}
-
 class HomeController<ViewModel: HomeViewModelProtocol>: UIViewController {
    
     // MARK: - Private properties
     private let contentView: HomeView
     private let viewModel: ViewModel
-    private weak var delegate: HomeControllerDelegateProtocol?
     
     // MARK: - Init
-    init(viewModel: ViewModel, delegate: HomeControllerDelegateProtocol?) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
-        self.delegate = delegate
         self.contentView = HomeView.loadNib()
         super.init(nibName: nil, bundle: nil)
     }

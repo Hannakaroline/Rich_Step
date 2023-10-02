@@ -21,5 +21,4 @@ class SpendDetailsViewModel: DetailsViewModelProtocol {
                 DetailsCellViewModel(detailsViewModel: $0)
             })
     }
-    
 }

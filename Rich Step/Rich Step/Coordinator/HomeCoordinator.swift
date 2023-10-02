@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCoordinator: CoordinatorProtocol, HomeControllerDelegateProtocol {
+class HomeCoordinator: CoordinatorProtocol {
 
     // MARK: Public properties
     weak var childDelegate: ChildCoordinatorDelegate?
@@ -21,13 +21,17 @@ class HomeCoordinator: CoordinatorProtocol, HomeControllerDelegateProtocol {
 
     // MARK: Start
     func start() -> UIViewController {
-        let home = HomeFactory.home(delegate: self)
+        let home = HomeFactory.home(coordinator: self)
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.setViewControllers([home], animated: true)
         return navigationController
     }
+}
+
+extension HomeCoordinator: SpendControllerDelegate {
     
-    // TODO: Go to
-    func goToDetails() {
+    func goToDetails(monthlySpending: MonthlySpending) {
+        let detailsVC = HomeFactory.spendDetails(delegate: self)
+        navigationController.pushViewController(detailsVC, animated: true)
     }
 }

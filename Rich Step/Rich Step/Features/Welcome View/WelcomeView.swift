@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol welcomeProtocol {
     func didTapStartButton()
 }
@@ -41,5 +42,3 @@ class WelcomeView: UIView {
         startButton.addTarget(self, action: #selector(didTapStartButton), for: .touchUpInside)
     }
 }
-
-

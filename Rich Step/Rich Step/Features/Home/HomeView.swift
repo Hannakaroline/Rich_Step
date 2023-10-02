@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeViewModelProtocol {
-    var fetchSections: [HomeCellSection] { get }
+    var fetchSections: [MonthlySpendingsSection] { get }
 }
 
 class HomeView: UIView {

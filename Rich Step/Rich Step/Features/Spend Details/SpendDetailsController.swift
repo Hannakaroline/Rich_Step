@@ -6,17 +6,17 @@
 //
 
 import UIKit
-protocol SpendControllerDelegateProtocol: AnyObject {}
+protocol SpendControllerDelegate: AnyObject { }
 
 class SpendDetailsController<ViewModel: SpendDetailProtocol>: UIViewController {
     
     // MARK: - Private properties
     private let contentView: SpendDetail
     private let viewModel: ViewModel
-    private weak var delegate: SpendControllerDelegateProtocol?
+    private weak var delegate: SpendControllerDelegate?
     
     // MARK: Init
-   init(viewModel: ViewModel, delegate: SpendControllerDelegateProtocol?) {
+   init(viewModel: ViewModel, delegate: SpendControllerDelegate?) {
         self.viewModel = viewModel
         self.delegate = delegate
        self.contentView = SpendDetail.loadNib()

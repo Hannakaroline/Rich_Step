@@ -8,7 +8,7 @@
 import UIKit
 
 class WelcomeViewFactory {
-    static func welcomeView(delegate: welcomeViewDelegateProtocol?) -> UIViewController {
+    static func welcomeView(delegate: WelcomeViewDelegateProtocol?) -> UIViewController {
         let viewModel = WelcomeViewModel()
         return WelcomeViewController(viewModel: viewModel, delegate: delegate)
     }

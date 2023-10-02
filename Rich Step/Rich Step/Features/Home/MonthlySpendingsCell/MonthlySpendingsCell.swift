@@ -1,5 +1,5 @@
 //
-//  HomeViewCell.swift
+//  MonthlySpendingsCell.swift
 //  Rich Step
 //
 //  Created by Hanna on 30/09/23.
@@ -7,28 +7,28 @@
 
 import UIKit
 
-protocol HomeCellProtocol {
+protocol MonthlySpendingsCellProtocol {
     var dateLabel: String? { get }
     var valueLabel: String? { get }
     
-    func didTapDetails()
+    func didTapCell()
 }
 
-class HomeViewCell: UITableViewCell {
+class MonthlySpendingsCell: UITableViewCell {
 
     // MARK: - UI Components
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
     @IBOutlet var openButton: UIButton!
     
-    private var viewModel: HomeCellProtocol?
+    private var viewModel: MonthlySpendingsCellProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
     }
 
-    func bindIn(viewModel: HomeCellProtocol) {
+    func bindIn(viewModel: MonthlySpendingsCellProtocol) {
         self.viewModel = viewModel
         dateLabel.text = viewModel.dateLabel
         valueLabel.text = viewModel.valueLabel
@@ -36,16 +36,16 @@ class HomeViewCell: UITableViewCell {
     
     // MARK: - Actions
     @objc func didTapDetails() {
-        viewModel?.didTapDetails()
+        viewModel?.didTapCell()
+    }
+}
+
+extension MonthlySpendingsCell {
+    func setup() {
+        contentView.backgroundColor = .clear
     }
     
     func setupOpenDetailsButton() {
         openButton.addTarget(self, action: #selector(didTapDetails), for: .touchUpInside)
-    }
-}
-
-extension HomeViewCell {
-    func setup() {
-        contentView.backgroundColor = .clear
     }
 }

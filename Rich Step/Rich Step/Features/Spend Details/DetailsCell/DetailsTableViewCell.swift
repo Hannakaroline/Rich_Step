@@ -33,6 +33,7 @@ class DetailsTableViewCell: UITableViewCell {
         self.viewModel = viewModel
         nameLabel.text = viewModel.nameLabel
         dateLabel.text = viewModel.dateLabel
+        valueLabel.text = viewModel.valueLabel
     }
     
 }
