@@ -22,6 +22,7 @@ class MonthlySpendingsCell: UITableViewCell {
     @IBOutlet var openButton: UIButton!
     @IBOutlet weak var cardView: UIView!
     
+    // MARK: - Private properties
     private var viewModel: MonthlySpendingsCellProtocol?
     
     override func awakeFromNib() {

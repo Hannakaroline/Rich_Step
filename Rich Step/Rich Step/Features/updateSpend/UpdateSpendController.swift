@@ -7,14 +7,14 @@
 
 import UIKit
 
-class AddSpendController: UIViewController {
+class UpdateSpendController: UIViewController {
     
     // MARK: - Private properties
-    private let contentView: AddSpend
+    private let contentView: UpdateSpend
     
     // MARK: Init
     init() {
-        self.contentView = AddSpend.loadNib()
+        self.contentView = UpdateSpend.loadNib()
         super.init(nibName: nil, bundle: nil)
     }
     
