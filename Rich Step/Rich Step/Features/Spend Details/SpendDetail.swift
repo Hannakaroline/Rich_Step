@@ -8,6 +8,7 @@
 import UIKit
 
 protocol SpendDetailProtocol {
+    var totalAmount: String? { get }
     var fetchSections: [DetailsCellSection] { get }
 }
 
@@ -30,6 +31,7 @@ class SpendDetail: UIView {
     // MARK: - BindIn
     func bindIn(viewModel: SpendDetailProtocol) {
         self.viewModel = viewModel
+        valueLabel.text = viewModel.totalAmount
         self.tableViewDataSource.sections = viewModel.fetchSections
     }
 }

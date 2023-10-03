@@ -32,16 +32,8 @@ class HomeViewModel: HomeViewModelProtocol {
     }
     
     func spending() -> MonthlySpendingsSection  {
-        let spendings = [
-            Spending(date: parseMonth("2023/08/01")!, description: "Shopping", amount: 100),
-            Spending(date: parseMonth("2023/08/01")!, description: "Wifi", amount: 100),
-            Spending(date: parseMonth("2023/07/01")!, description: "Shopping", amount: 100),
-            Spending(date: parseMonth("2023/07/01")!, description: "Wifi", amount: 100),
-            Spending(date: parseMonth("2023/06/01")!, description: "Shopping", amount: 100),
-            Spending(date: parseMonth("2023/06/01")!, description: "Wifi", amount: 100),
-            Spending(date: parseMonth("2023/05/01")!, description: "Shopping", amount: 100),
-            Spending(date: parseMonth("2023/05/01")!, description: "Wifi", amount: 100),
-        ]
+        let spendings = SpendingsRepository.instance.getSpendings()
+        
         let spendingsByMonth = Dictionary(
             grouping: spendings,
             by: { mapMonthOfYear(date: $0.date)})

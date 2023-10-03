@@ -1,5 +1,5 @@
 //
-//  SpendingView.swift
+//  WelcomeView.swift
 //  Rich Step
 //
 //  Created by Hanna on 29/09/23.

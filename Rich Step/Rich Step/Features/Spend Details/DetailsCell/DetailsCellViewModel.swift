@@ -7,27 +7,26 @@
 
 import Foundation
 
-protocol DetailsCellViewModelProtocol: DetailsTableViewCellProtocol {
-    
-}
+protocol DetailsCellViewModelProtocol: DetailsTableViewCellProtocol { }
 class DetailsCellViewModel: DetailsCellViewModelProtocol {
     
-    var detailsViewModel: DetailsModel
+    // MARK: - Public properties
+    var spending: Spending
     
     // MARK: - Init
-    init(detailsViewModel: DetailsModel) {
-        self.detailsViewModel = detailsViewModel
+    init(spending: Spending) {
+        self.spending = spending
     }
     
     var nameLabel: String? {
-        return detailsViewModel.name
+        return spending.description
     }
     
     var dateLabel: String? {
-        return detailsViewModel.date
+        return "\(spending.date)"
     }
     
     var valueLabel: String? {
-        return detailsViewModel.value
+        return "\(spending.amount)"
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 struct Spending {
+    var id: Int
     var date: Date
     var description: String
     var amount: Float
