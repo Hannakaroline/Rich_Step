@@ -6,7 +6,16 @@
 //
 
 import Foundation
+protocol UpdateSpendProtocol: UpdateSpendViewModelProtocol {
+    var onTapUpdateAmount: (() -> Void)? { get set }
+}
 
-class UpdateSpendViewModel {
+class UpdateSpendViewModel: UpdateSpendProtocol {
+
+    // MARK: - Public properties
+    var onTapUpdateAmount: (() -> Void)?
     
+    func didUpdate() {
+        onTapUpdateAmount?()
+    }
 }

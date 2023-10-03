@@ -13,8 +13,13 @@ class HomeFactory {
         return HomeController(viewModel: viewModel)
     }
     
-    static func spendDetails(delegate: SpendControllerDelegate?) -> UIViewController {
-        let detailsViewModel = SpendDetailsViewModel()
+    static func spendDetails(coordinator: HomeCoordinator, delegate: SpendControllerDelegate?) -> UIViewController {
+        let detailsViewModel = SpendDetailsViewModel(homeCoordinator: coordinator)
         return SpendDetailsController(viewModel: detailsViewModel, delegate: delegate)
+    }
+    
+    static func updateSpend(delegate: UpdateSpendControllerDelegate?) -> UIViewController {
+        let updateSpendViewModel = UpdateSpendViewModel()
+        return UpdateSpendController(viewModel: updateSpendViewModel, delegate: delegate)
     }
 }

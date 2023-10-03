@@ -7,16 +7,12 @@
 
 import UIKit
 
-protocol MonthlySpendingDelegateProtocol: AnyObject {
-    func goToDetails()
-}
-
 class MonthlySpendingsSection: TableSectionProtocol, SpendControllerDelegate {
     
     // MARK: - Private properties
     private let viewModels: [MonthlySpendingViewModel]
     var homeCoordinator: HomeCoordinator
-
+    
     init(viewModels: [MonthlySpendingViewModel], homeCoordinator: HomeCoordinator) {
         self.viewModels = viewModels
         self.homeCoordinator = homeCoordinator

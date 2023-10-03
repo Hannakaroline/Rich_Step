@@ -14,11 +14,16 @@ class SpendDetailsViewModel: DetailsViewModelProtocol {
     var fetchSections: [DetailsCellSection] {
         [detailsSection()]
     }
-
+    let homeCoordinator: HomeCoordinator
+    
+    // MARK: - Init
+    init(homeCoordinator: HomeCoordinator) {
+        self.homeCoordinator = homeCoordinator
+    }
     private func detailsSection() -> DetailsCellSection {
         DetailsCellSection(
-            viewModel: DetailsModel.allCases.map {
+            viewModels: DetailsModel.allCases.map {
                 DetailsCellViewModel(detailsViewModel: $0)
-            })
+            }, homeCoordinator: homeCoordinator)
     }
 }

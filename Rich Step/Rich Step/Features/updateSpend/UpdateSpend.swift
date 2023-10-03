@@ -7,10 +7,7 @@
 
 import UIKit
 
-protocol UpdateSpendProtocol {
-    var itemTextField: String? { get set }
-    var amountTextFIeld: String? { get set }
-    
+protocol UpdateSpendViewModelProtocol {
     func didUpdate()
 }
 
@@ -22,11 +19,11 @@ class UpdateSpend: UIView {
     @IBOutlet private weak var itemLabel: UILabel!
     @IBOutlet private weak var itemTextField: UITextField!
     @IBOutlet private weak var amountLabel: UILabel!
-    @IBOutlet private weak var amountTextFIeld: UITextField!
+    @IBOutlet private weak var amountTextField: UITextField!
     @IBOutlet private weak var updateButton: UIButton!
     
     // MARK: - Private properties
-    private var viewModel: UpdateSpendProtocol?
+    private var viewModel: UpdateSpendViewModelProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,12 +31,13 @@ class UpdateSpend: UIView {
     }
     
     //  MARK: - BindIn
-    func bindIn(viewModel: UpdateSpendProtocol) {
+    func bindIn(viewModel: UpdateSpendViewModelProtocol) {
         self.viewModel = viewModel
     }
 }
 
 extension UpdateSpend {
+    
     private func setup() {
         dateLabel.text = "Date"
         itemLabel.text = "Item"

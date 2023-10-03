@@ -7,17 +7,20 @@
 
 import UIKit
 
-class DetailsCellSection: TableSectionProtocol {
+class DetailsCellSection: TableSectionProtocol, UpdateSpendControllerDelegate {
     
     // MARK: - Private properties
-    private let viewModel: [DetailsTableViewCellProtocol]
-    
-    init(viewModel: [DetailsTableViewCellProtocol]) {
-        self.viewModel = viewModel
+    private let viewModels: [DetailsTableViewCellProtocol]
+    var homeCoordinator: HomeCoordinator
+
+    // MARK: - Init
+    init(viewModels: [DetailsTableViewCellProtocol], homeCoordinator: HomeCoordinator) {
+        self.viewModels = viewModels
+        self.homeCoordinator = homeCoordinator
     }
     
     var itemsCount: Int {
-        viewModel.count
+        viewModels.count
     }
     
     func cellType() -> UITableViewCell.Type {
@@ -30,7 +33,12 @@ class DetailsCellSection: TableSectionProtocol {
     
     func configureCell(cell: UITableViewCell, at row: Int) {
         if let cell = cell as? DetailsTableViewCell, row < itemsCount {
-            cell.bindIn(viewModel: viewModel[row])
+            cell.bindIn(viewModel: viewModels[row])
         }
+    }
+    
+    func didSelectAt(row: Int) {
+        let vm = viewModels[row]
+        homeCoordinator.goToUpdateSpend()
     }
 }

@@ -31,7 +31,14 @@ class HomeCoordinator: CoordinatorProtocol {
 extension HomeCoordinator: SpendControllerDelegate {
     
     func goToDetails(monthlySpending: MonthlySpending) {
-        let detailsVC = HomeFactory.spendDetails(delegate: self)
+        let detailsVC = HomeFactory.spendDetails(coordinator: self, delegate: self)
         navigationController.pushViewController(detailsVC, animated: true)
+    }
+}
+
+extension HomeCoordinator: UpdateSpendControllerDelegate {
+    func goToUpdateSpend(){
+        let updateSpendVC = HomeFactory.updateSpend(delegate: self)
+        navigationController.pushViewController(updateSpendVC, animated: true)
     }
 }
