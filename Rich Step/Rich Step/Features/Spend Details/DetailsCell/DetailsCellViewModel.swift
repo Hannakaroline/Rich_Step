@@ -18,15 +18,15 @@ class DetailsCellViewModel: DetailsCellViewModelProtocol {
         self.spending = spending
     }
     
-    var nameLabel: String? {
+    var description: String? {
         return spending.description
     }
     
-    var dateLabel: String? {
+    var date: String? {
         return "\(spending.date)"
     }
     
-    var valueLabel: String? {
+    var amount: String? {
         return "\(spending.amount)"
     }
 }

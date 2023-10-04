@@ -17,11 +17,12 @@ class MonthlySpendingViewModel: MonthlySpendingsCellViewModel {
     var monthlySpending: MonthlySpending
     var onTapDetailsButton: (() -> Void)?
     let dateFormatter = DateFormatter()
-    var dateLabel: String? {
+    
+    var date: String? {
         return "\(monthlySpending.monthOfYear.year)/\(monthlySpending.monthOfYear.month)"
     }
     
-    var valueLabel: String? {
+    var amount: String? {
         let value = monthlySpending.spendings.reduce(0, { $0 + $1.amount})
         return String(value)
     }

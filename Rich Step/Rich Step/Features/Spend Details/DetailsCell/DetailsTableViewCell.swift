@@ -8,18 +8,18 @@
 import UIKit
 
 protocol DetailsTableViewCellProtocol {
-    var nameLabel: String? { get }
-    var dateLabel: String? { get }
-    var valueLabel: String? { get }
+    var description: String? { get }
+    var date: String? { get }
+    var amount: String? { get }
 }
 
 class DetailsTableViewCell: UITableViewCell {
     
     // MARK: - UI Components
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var valueLabel: UILabel!
-    @IBOutlet var openButton: UIButton!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet private weak var openButton: UIButton!
     
     // MARK: - Private properties
     var viewModel: DetailsTableViewCellProtocol?
@@ -31,9 +31,10 @@ class DetailsTableViewCell: UITableViewCell {
     
     func bindIn(viewModel: DetailsTableViewCellProtocol) {
         self.viewModel = viewModel
-        nameLabel.text = viewModel.nameLabel
-        dateLabel.text = viewModel.dateLabel
-        valueLabel.text = viewModel.valueLabel
+        nameLabel.text = viewModel.description
+        dateLabel.text = viewModel.date
+        let formattedAmount = "¥" + viewModel.amount!
+        valueLabel.text = formattedAmount
     }
     
 }

@@ -17,7 +17,7 @@ class SpendingsRepository {
         formatter.dateFormat = "yyyy/MM/dd"
         spendings = [Spending]()
         spendings.append(contentsOf: [
-            Spending(id: 1, date: parseMonth("2023/09/01")!, description: "Shopping", amount: 100),
+            Spending(id: 1, date: parseMonth("2023/09/15")!, description: "Shopping", amount: 100),
             Spending(id: 2, date: parseMonth("2023/08/01")!, description: "Wifi", amount: 100),
             Spending(id: 3, date: parseMonth("2023/07/01")!, description: "Gas", amount: 100),
             Spending(id: 4, date: parseMonth("2023/07/01")!, description: "Water", amount: 100),

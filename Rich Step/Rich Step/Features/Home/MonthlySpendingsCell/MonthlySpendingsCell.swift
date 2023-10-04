@@ -8,8 +8,8 @@
 import UIKit
 
 protocol MonthlySpendingsCellProtocol {
-    var dateLabel: String? { get }
-    var valueLabel: String? { get }
+    var date: String? { get }
+    var amount: String? { get }
     
     func didTapCell()
 }
@@ -32,8 +32,9 @@ class MonthlySpendingsCell: UITableViewCell {
 
     func bindIn(viewModel: MonthlySpendingsCellProtocol) {
         self.viewModel = viewModel
-        dateLabel.text = viewModel.dateLabel
-        valueLabel.text = viewModel.valueLabel
+        dateLabel.text = viewModel.date
+        let formattedAmount = "¥" + viewModel.amount!
+        valueLabel.text = formattedAmount
     }
     
     // MARK: - Actions
