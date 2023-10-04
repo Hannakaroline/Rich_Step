@@ -8,17 +8,18 @@
 import UIKit
 
 protocol UpdateSpendViewModelProtocol {
-    func didUpdate()
+    var date: String { get }
+    var amount: Float { get }
+    var itemDescription: String? { get }
+
+    func didTapUpdate()
 }
 
 class UpdateSpend: UIView {
     
     // MARK: - UI Components
-    @IBOutlet private weak var dateLabel: UILabel!
-    @IBOutlet private weak var datePicker: UIDatePicker!
-    @IBOutlet private weak var itemLabel: UILabel!
-    @IBOutlet private weak var itemTextField: UITextField!
-    @IBOutlet private weak var amountLabel: UILabel!
+    @IBOutlet private weak var dateTextField: UITextField!
+    @IBOutlet private weak var itemDescriptionTextField: UITextField!
     @IBOutlet private weak var amountTextField: UITextField!
     @IBOutlet private weak var updateButton: UIButton!
     
@@ -33,14 +34,24 @@ class UpdateSpend: UIView {
     //  MARK: - BindIn
     func bindIn(viewModel: UpdateSpendViewModelProtocol) {
         self.viewModel = viewModel
+        dateTextField.text = viewModel.date
+        itemDescriptionTextField.text = viewModel.itemDescription
+        amountTextField.text = String(viewModel.amount)
+    }
+    
+    @objc func didTapUpdate() {
+        viewModel?.didTapUpdate()
     }
 }
 
 extension UpdateSpend {
     
     private func setup() {
-        dateLabel.text = "Date"
-        itemLabel.text = "Item"
-        amountLabel.text = "Amount"
+        dateTextField.isEnabled = false
+        setupButton()
+    }
+    
+    private func setupButton() {
+        updateButton.addTarget(self, action: #selector(didTapUpdate), for: .touchUpInside)
     }
 }

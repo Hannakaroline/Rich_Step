@@ -236,7 +236,7 @@
 		F5A0521A2AC6C91400C27C7B /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				F5AD9EF82ACA87570014C67A /* updateSpend */,
+				F5AD9EF82ACA87570014C67A /* UpdateSpend */,
 				F5A052292AC6F03000C27C7B /* Welcome View */,
 				F5A052262AC6E93100C27C7B /* Home */,
 				F5A052722AC84E6100C27C7B /* Spend Details */,
@@ -340,7 +340,7 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		F5AD9EF82ACA87570014C67A /* updateSpend */ = {
+		F5AD9EF82ACA87570014C67A /* UpdateSpend */ = {
 			isa = PBXGroup;
 			children = (
 				F5AD9EFB2ACAA1F50014C67A /* UpdateSpend.xib */,
@@ -348,7 +348,7 @@
 				F5AD9EFD2ACAA6BC0014C67A /* UpdateSpendViewModel.swift */,
 				F5AD9EFF2ACAA6F00014C67A /* UpdateSpendController.swift */,
 			);
-			path = updateSpend;
+			path = UpdateSpend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

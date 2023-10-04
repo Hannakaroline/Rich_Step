@@ -6,21 +6,23 @@
 //
 
 import Foundation
-protocol DetailsViewModelProtocol: SpendDetailProtocol { }
 
-class SpendDetailsViewModel: DetailsViewModelProtocol {
+class SpendDetailsViewModel: SpendDetailProtocol {
     
     // MARK: - Public properties
-    var fetchSections: [DetailsCellSection] {
+    var sections: [DetailsCellSection] {
         [detailsSection()]
     }
-    let formatter = DateFormatter()
     let homeCoordinator: HomeCoordinator
     let monthlySpending: MonthlySpending
     
     var totalAmount: String? {
         let value = monthlySpending.spendings.reduce(0, { $0 + $1.amount})
         return String(value)
+    }
+    
+    var monthOfYear: String {
+        "\(monthlySpending.monthOfYear.year)/\(monthlySpending.monthOfYear.month)"
     }
     
     // MARK: - Init

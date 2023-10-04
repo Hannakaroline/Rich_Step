@@ -35,12 +35,7 @@ class HomeView: UIView {
 extension HomeView {
     
     private func setup() {
-        setupTableView()
         tableViewDataSource.tableView = tableView
         title.text = "Spending List"
-    }
-    
-    private func setupTableView() {
-        tableView.isScrollEnabled = false
     }
 }

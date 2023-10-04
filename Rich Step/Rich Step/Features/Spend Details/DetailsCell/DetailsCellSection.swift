@@ -10,11 +10,11 @@ import UIKit
 class DetailsCellSection: TableSectionProtocol, UpdateSpendControllerDelegate {
     
     // MARK: - Private properties
-    private let viewModels: [DetailsTableViewCellProtocol]
+    private let viewModels: [DetailsCellViewModel]
     var homeCoordinator: HomeCoordinator
 
     // MARK: - Init
-    init(viewModels: [DetailsTableViewCellProtocol], homeCoordinator: HomeCoordinator) {
+    init(viewModels: [DetailsCellViewModel], homeCoordinator: HomeCoordinator) {
         self.viewModels = viewModels
         self.homeCoordinator = homeCoordinator
     }
@@ -39,6 +39,6 @@ class DetailsCellSection: TableSectionProtocol, UpdateSpendControllerDelegate {
     
     func didSelectAt(row: Int) {
         let vm = viewModels[row]
-        homeCoordinator.goToUpdateSpend()
+        homeCoordinator.goToUpdateSpend(spending: vm.spending)
     }
 }

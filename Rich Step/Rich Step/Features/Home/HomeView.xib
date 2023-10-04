@@ -10,18 +10,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="HomeView" customClass="HomeView" customModule="Rich_Step" customModuleProvider="target">
+        <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="iN0-l3-epB" userLabel="HomeView" customClass="HomeView" customModule="Rich_Step" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsi-oV-DRN" userLabel="title">
-                    <rect key="frame" x="16" y="52" width="382" height="24"/>
+                    <rect key="frame" x="16" y="16" width="382" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Uxh-u9-ijz">
-                    <rect key="frame" x="16" y="92" width="382" height="786"/>
+                    <rect key="frame" x="16" y="56" width="382" height="822"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -32,10 +32,11 @@
                 <constraint firstItem="Uxh-u9-ijz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="G7v-2r-qLw"/>
                 <constraint firstItem="Fsi-oV-DRN" firstAttribute="leading" secondItem="Uxh-u9-ijz" secondAttribute="leading" id="GcS-Vp-URt"/>
                 <constraint firstItem="Fsi-oV-DRN" firstAttribute="trailing" secondItem="Uxh-u9-ijz" secondAttribute="trailing" id="KPy-5k-nHJ"/>
-                <constraint firstItem="Fsi-oV-DRN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Nv9-DZ-bxb"/>
+                <constraint firstItem="Fsi-oV-DRN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="Nv9-DZ-bxb"/>
                 <constraint firstItem="Uxh-u9-ijz" firstAttribute="top" secondItem="Fsi-oV-DRN" secondAttribute="bottom" constant="16" id="gJZ-Tq-0Ma"/>
                 <constraint firstItem="Uxh-u9-ijz" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="16" id="jef-Ga-Uzh"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="tableView" destination="Uxh-u9-ijz" id="wpd-Sx-cfb"/>
                 <outlet property="title" destination="Fsi-oV-DRN" id="QgT-FV-rgq"/>

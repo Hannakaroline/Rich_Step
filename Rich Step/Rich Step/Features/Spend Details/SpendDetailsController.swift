@@ -36,5 +36,6 @@ class SpendDetailsController<ViewModel: SpendDetailProtocol>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.bindIn(viewModel: viewModel)
+        title = "Spend Detail \(viewModel.monthOfYear)"
     }
 }

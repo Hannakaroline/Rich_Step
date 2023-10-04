@@ -9,7 +9,8 @@ import UIKit
 
 protocol SpendDetailProtocol {
     var totalAmount: String? { get }
-    var fetchSections: [DetailsCellSection] { get }
+    var monthOfYear: String { get }
+    var sections: [DetailsCellSection] { get }
 }
 
 class SpendDetail: UIView {
@@ -33,7 +34,7 @@ class SpendDetail: UIView {
         self.viewModel = viewModel
         let formattedAmount = "¥" + viewModel.totalAmount!
         valueLabel.text = formattedAmount
-        self.tableViewDataSource.sections = viewModel.fetchSections
+        self.tableViewDataSource.sections = viewModel.sections
     }
 }
 

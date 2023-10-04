@@ -37,8 +37,8 @@ extension HomeCoordinator: SpendControllerDelegate {
 }
 extension HomeCoordinator: UpdateSpendControllerDelegate {
     
-    func goToUpdateSpend(){
-        let updateSpendVC = HomeFactory.updateSpend(delegate: self)
+    func goToUpdateSpend(spending: Spending){
+        let updateSpendVC = HomeFactory.updateSpend(delegate: self, spending: spending)
         navigationController.pushViewController(updateSpendVC, animated: true)
     }
 }

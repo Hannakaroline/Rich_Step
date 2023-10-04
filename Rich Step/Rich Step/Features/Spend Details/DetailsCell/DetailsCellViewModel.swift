@@ -7,8 +7,7 @@
 
 import Foundation
 
-protocol DetailsCellViewModelProtocol: DetailsTableViewCellProtocol { }
-class DetailsCellViewModel: DetailsCellViewModelProtocol {
+class DetailsCellViewModel: DetailsTableViewCellProtocol {
     
     // MARK: - Public properties
     var spending: Spending

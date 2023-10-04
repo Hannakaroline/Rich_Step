@@ -24,7 +24,7 @@ class SpendingsRepository {
             Spending(id: 5, date: parseMonth("2023/06/01")!, description: "Supermarket", amount: 100),
             Spending(id: 6, date: parseMonth("2023/06/01")!, description: "Anime", amount: 100),
             Spending(id: 7, date: parseMonth("2023/05/01")!, description: "Gym", amount: 100),
-            Spending(id: 8, date: parseMonth("2023/05/01")!, description: "house rent", amount: 100),
+            Spending(id: 8, date: parseMonth("2023/05/01")!, description: "House rent", amount: 100),
         ])
     }
     

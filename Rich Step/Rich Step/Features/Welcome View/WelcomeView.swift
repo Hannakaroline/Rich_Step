@@ -36,7 +36,7 @@ class WelcomeView: UIView {
     }
     
     func setupStartButton(){
-        startButton.backgroundColor = UIColor(red: 23, green: 142, blue: 212, alpha: 1.0)
+        startButton.backgroundColor = UIColor.blue
         startButton.addTarget(self, action: #selector(didTapStartButton), for: .touchUpInside)
     }
 }

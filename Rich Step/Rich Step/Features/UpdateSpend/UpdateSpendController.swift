@@ -36,5 +36,6 @@ class UpdateSpendController<ViewModel: UpdateSpendViewModelProtocol>: UIViewCont
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.bindIn(viewModel: viewModel)
+        title = "Spend Item Detail"
     }
 }

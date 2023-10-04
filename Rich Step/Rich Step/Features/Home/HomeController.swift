@@ -33,5 +33,8 @@ class HomeController<ViewModel: HomeViewModelProtocol>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.bindIn(viewModel: viewModel)
+        navigationController?.view.backgroundColor = UIColor.systemBlue
+        UINavigationBar.appearance().isTranslucent = false
+        title = "Home"
     }
 }
