@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol WelcomeViewModelProtocol: welcomeProtocol {
+protocol WelcomeViewProtocol: WelcomeViewModelProtocol {
     var onTapStartButton: (() -> Void)? { get set }
 }
 
-class WelcomeViewModel: WelcomeViewModelProtocol {
+class WelcomeViewModel: WelcomeViewProtocol {
     var titleLabel: String = ""
     
     var onTapStartButton: (() -> Void)? 

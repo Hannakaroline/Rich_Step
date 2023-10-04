@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol welcomeProtocol {
+protocol WelcomeViewModelProtocol {
     func didTapStartButton()
 }
 class WelcomeView: UIView {
@@ -18,7 +18,7 @@ class WelcomeView: UIView {
 
     
     // MARK: - Private properties
-    private var viewModel: welcomeProtocol?
+    private var viewModel: WelcomeViewModelProtocol?
     
     // MARK: - Life Cycle
     override func awakeFromNib() {
@@ -26,7 +26,7 @@ class WelcomeView: UIView {
         setupStartButton()
     }
     
-    func bindIn(viewModel: welcomeProtocol) {
+    func bindIn(viewModel: WelcomeViewModelProtocol) {
         self.viewModel = viewModel
     }
     

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F54464032ACD5FC700C88A2F /* AddSpendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54464022ACD5FC700C88A2F /* AddSpendController.swift */; };
+		F54464052ACD608100C88A2F /* AddSpend.xib in Resources */ = {isa = PBXBuildFile; fileRef = F54464042ACD608100C88A2F /* AddSpend.xib */; };
+		F54464072ACD618C00C88A2F /* AddSpend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54464062ACD618C00C88A2F /* AddSpend.swift */; };
+		F54464092ACD652F00C88A2F /* AddSpendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54464082ACD652F00C88A2F /* AddSpendViewModel.swift */; };
 		F5A051DC2AC6C2FA00C27C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A051DB2AC6C2FA00C27C7B /* AppDelegate.swift */; };
 		F5A051DE2AC6C2FA00C27C7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A051DD2AC6C2FA00C27C7B /* SceneDelegate.swift */; };
 		F5A051E62AC6C2FA00C27C7B /* Rich_Step.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5A051E42AC6C2FA00C27C7B /* Rich_Step.xcdatamodeld */; };
@@ -76,6 +80,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F54464022ACD5FC700C88A2F /* AddSpendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendController.swift; sourceTree = "<group>"; };
+		F54464042ACD608100C88A2F /* AddSpend.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSpend.xib; sourceTree = "<group>"; };
+		F54464062ACD618C00C88A2F /* AddSpend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpend.swift; sourceTree = "<group>"; };
+		F54464082ACD652F00C88A2F /* AddSpendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendViewModel.swift; sourceTree = "<group>"; };
 		F5A051D82AC6C2FA00C27C7B /* Rich Step.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rich Step.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A051DB2AC6C2FA00C27C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5A051DD2AC6C2FA00C27C7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +164,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F54464012ACD5F4500C88A2F /* AddSpend */ = {
+			isa = PBXGroup;
+			children = (
+				F54464042ACD608100C88A2F /* AddSpend.xib */,
+				F54464062ACD618C00C88A2F /* AddSpend.swift */,
+				F54464022ACD5FC700C88A2F /* AddSpendController.swift */,
+				F54464082ACD652F00C88A2F /* AddSpendViewModel.swift */,
+			);
+			path = AddSpend;
+			sourceTree = "<group>";
+		};
 		F5A051CF2AC6C2FA00C27C7B = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +255,7 @@
 		F5A0521A2AC6C91400C27C7B /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F54464012ACD5F4500C88A2F /* AddSpend */,
 				F5AD9EF82ACA87570014C67A /* UpdateSpend */,
 				F5A052292AC6F03000C27C7B /* Welcome View */,
 				F5A052262AC6E93100C27C7B /* Home */,
@@ -271,8 +291,8 @@
 			children = (
 				F5A0521D2AC6CB2700C27C7B /* WelcomeView.xib */,
 				F5A0521F2AC6CB4D00C27C7B /* WelcomeView.swift */,
-				F5A0521B2AC6C99200C27C7B /* WelcomeViewController.swift */,
 				F5A052702AC839C700C27C7B /* WelcomeViewModel.swift */,
+				F5A0521B2AC6C99200C27C7B /* WelcomeViewController.swift */,
 			);
 			path = "Welcome View";
 			sourceTree = "<group>";
@@ -461,6 +481,7 @@
 				F5A0526D2AC8287800C27C7B /* MonthlySpendingsCell.xib in Resources */,
 				F5A0527B2AC8538900C27C7B /* DetailsTableViewCell.xib in Resources */,
 				F5A052762AC8517600C27C7B /* SpendDetail.xib in Resources */,
+				F54464052ACD608100C88A2F /* AddSpend.xib in Resources */,
 				F5AD9EFC2ACAA1F50014C67A /* UpdateSpend.xib in Resources */,
 				F5A052252AC6E05800C27C7B /* Main.storyboard in Resources */,
 				F5A052352AC6FB4B00C27C7B /* HomeView.xib in Resources */,
@@ -502,8 +523,10 @@
 				F5A0521C2AC6C99200C27C7B /* WelcomeViewController.swift in Sources */,
 				F5A052152AC6C69000C27C7B /* WelcomeViewCoordinator.swift in Sources */,
 				F5A052812AC93C5200C27C7B /* SpendDetailsController.swift in Sources */,
+				F54464032ACD5FC700C88A2F /* AddSpendController.swift in Sources */,
 				F5AD9ECF2ACA59630014C67A /* MonthlySpending.swift in Sources */,
 				F5A0523F2AC7201800C27C7B /* WelcomeViewFactory.swift in Sources */,
+				F54464072ACD618C00C88A2F /* AddSpend.swift in Sources */,
 				F5A052562AC739AD00C27C7B /* TableViewDataSource.swift in Sources */,
 				F5A0523C2AC7092800C27C7B /* HomeController.swift in Sources */,
 				F5AD9F002ACAA6F00014C67A /* UpdateSpendController.swift in Sources */,
@@ -519,6 +542,7 @@
 				F5A051DE2AC6C2FA00C27C7B /* SceneDelegate.swift in Sources */,
 				F5A052692AC8109A00C27C7B /* UITableView+Reusable.swift in Sources */,
 				F5AD9ED12ACA5FE30014C67A /* MonthOfYear.swift in Sources */,
+				F54464092ACD652F00C88A2F /* AddSpendViewModel.swift in Sources */,
 				F5AD9EFA2ACAA0BB0014C67A /* UpdateSpend.swift in Sources */,
 				F5A052282AC6F00500C27C7B /* HomeView.swift in Sources */,
 				F5A052392AC7024D00C27C7B /* ReusableView.swift in Sources */,

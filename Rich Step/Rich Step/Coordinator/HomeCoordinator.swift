@@ -21,7 +21,7 @@ class HomeCoordinator: CoordinatorProtocol {
     
     // MARK: Start
     func start() -> UIViewController {
-        let home = HomeFactory.home(coordinator: self)
+        let home = HomeFactory.home(coordinator: self, delegate: self)
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.setViewControllers([home], animated: true)
         return navigationController
@@ -40,5 +40,13 @@ extension HomeCoordinator: UpdateSpendControllerDelegate {
     func goToUpdateSpend(spending: Spending){
         let updateSpendVC = HomeFactory.updateSpend(delegate: self, spending: spending)
         navigationController.pushViewController(updateSpendVC, animated: true)
+    }
+}
+
+extension HomeCoordinator: HomeControllerDelegate {
+    
+    func goToAddSpend() {
+        let addSpendVC = HomeFactory.addSpend()
+        navigationController.pushViewController(addSpendVC, animated: true)
     }
 }

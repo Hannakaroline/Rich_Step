@@ -7,15 +7,21 @@
 
 import UIKit
 
-class HomeController<ViewModel: HomeViewModelProtocol>: UIViewController {
+protocol HomeControllerDelegate: AnyObject {
+    func goToAddSpend()
+}
+
+class HomeController<ViewModel: HomeViewProtocol>: UIViewController {
    
     // MARK: - Private properties
     private let contentView: HomeView
-    private let viewModel: ViewModel
+    private var viewModel: ViewModel
+    private weak var delegate: HomeControllerDelegate?
     
     // MARK: - Init
-    init(viewModel: ViewModel) {
+    init(viewModel: ViewModel, delegate: HomeControllerDelegate?) {
         self.viewModel = viewModel
+        self.delegate = delegate
         self.contentView = HomeView.loadNib()
         super.init(nibName: nil, bundle: nil)
     }
@@ -30,11 +36,24 @@ class HomeController<ViewModel: HomeViewModelProtocol>: UIViewController {
         view = contentView
     }
     
+    @objc func didTapAdd() {
+        viewModel.didTapAddButton()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentView.bindIn(viewModel: viewModel)
-        navigationController?.view.backgroundColor = UIColor.systemBlue
-        UINavigationBar.appearance().isTranslucent = false
+//        navigationController?.view.backgroundColor = UIColor.systemBlue
+//        UINavigationBar.appearance().isTranslucent = false
         title = "Home"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
+        bind()
+    }
+    
+    private func bind() {
+        contentView.bindIn(viewModel: viewModel)
+        viewModel.onTapAddButton = { [weak self] in
+            self?.delegate?.goToAddSpend()
+        }
     }
 }

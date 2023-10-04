@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WelcomeViewCoordinator: CoordinatorProtocol, WelcomeViewDelegateProtocol {
+class WelcomeViewCoordinator: CoordinatorProtocol, WelcomeViewControllerDelegate {
 
     // MARK: Public properties
     weak var childDelegate: ChildCoordinatorDelegate?

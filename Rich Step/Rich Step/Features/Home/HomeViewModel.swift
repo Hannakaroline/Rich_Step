@@ -7,19 +7,28 @@
 
 import Foundation
 
-class HomeViewModel: HomeViewModelProtocol {
-    
+protocol HomeViewProtocol: HomeViewModelProtocol {
+    var onTapAddButton: (() -> Void)? { get set }
+}
+
+class HomeViewModel: HomeViewProtocol {
+
+    // MARK: - Public properties
+    var onTapAddButton: (() -> Void)?
+    var sections: [MonthlySpendingsSection] {
+        [spending()]
+    }
     let formatter = DateFormatter()
     let homeCoordinator: HomeCoordinator
+    
     // MARK: - Init
     init(homeCoordinator: HomeCoordinator){
         self.homeCoordinator = homeCoordinator
         formatter.dateFormat = "yyyy/MM/dd"
     }
     
-    // MARK: - Public properties
-    var fetchSections: [MonthlySpendingsSection] {
-        [spending()]
+    func didTapAddButton() {
+        onTapAddButton?()
     }
     
     func mapMonthOfYear(date: Date) -> MonthOfYear {
@@ -49,5 +58,4 @@ class HomeViewModel: HomeViewModelProtocol {
             homeCoordinator: homeCoordinator
         )
     }
-    
 }

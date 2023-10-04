@@ -8,7 +8,9 @@
 import UIKit
 
 protocol HomeViewModelProtocol {
-    var fetchSections: [MonthlySpendingsSection] { get }
+    var sections: [MonthlySpendingsSection] { get }
+    
+    func didTapAddButton()
 }
 
 class HomeView: UIView {
@@ -29,7 +31,7 @@ class HomeView: UIView {
     // MARK: - Bind
     func bindIn(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
-        self.tableViewDataSource.sections = viewModel.fetchSections
+        self.tableViewDataSource.sections = viewModel.sections
     }
 }
 extension HomeView {

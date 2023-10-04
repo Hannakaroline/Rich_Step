@@ -7,19 +7,19 @@
 
 import UIKit
 
-protocol WelcomeViewDelegateProtocol: AnyObject {
+protocol WelcomeViewControllerDelegate: AnyObject {
     func goToHome()
 }
 
-class WelcomeViewController<ViewModel: WelcomeViewModelProtocol>: UIViewController {
+class WelcomeViewController<ViewModel: WelcomeViewProtocol>: UIViewController {
     
     // MARK: - Private properties
     private let contentView: WelcomeView
     private var viewModel: ViewModel
-    private weak var delegate: WelcomeViewDelegateProtocol?
+    private weak var delegate: WelcomeViewControllerDelegate?
     
     // MARK: - Init
-    init(viewModel: ViewModel, delegate: WelcomeViewDelegateProtocol?){
+    init(viewModel: ViewModel, delegate: WelcomeViewControllerDelegate?){
         self.viewModel = viewModel
         self.delegate = delegate
         self.contentView = WelcomeView.loadNib()

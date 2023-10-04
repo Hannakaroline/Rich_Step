@@ -8,9 +8,9 @@
 import UIKit
 
 class HomeFactory {
-    static func home(coordinator: HomeCoordinator) -> UIViewController {
+    static func home(coordinator: HomeCoordinator, delegate: HomeControllerDelegate) -> UIViewController {
         let viewModel = HomeViewModel(homeCoordinator: coordinator)
-        return HomeController(viewModel: viewModel)
+        return HomeController(viewModel: viewModel, delegate: delegate)
     }
     
     static func spendDetails(coordinator: HomeCoordinator, delegate: SpendControllerDelegate?, monthlySpending: MonthlySpending) -> UIViewController {
@@ -21,5 +21,9 @@ class HomeFactory {
     static func updateSpend(delegate: UpdateSpendControllerDelegate?, spending: Spending) -> UIViewController {
         let updateSpendViewModel = UpdateSpendViewModel(spending: spending)
         return UpdateSpendController(viewModel: updateSpendViewModel, delegate: delegate)
+    }
+    
+    static func addSpend() -> UIViewController {
+        return AddSpendController()
     }
 }
