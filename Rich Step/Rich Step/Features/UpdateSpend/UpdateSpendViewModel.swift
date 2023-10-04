@@ -24,7 +24,7 @@ class UpdateSpendViewModel: UpdateSpendProtocol {
     var date: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
-        return formatter.string(from: spending.date)
+        return formatter.string(from: spending.date ?? Date.now)
     }
     
     var itemDescription: String? {

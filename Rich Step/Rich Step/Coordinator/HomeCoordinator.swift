@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCoordinator: CoordinatorProtocol {
+class HomeCoordinator: CoordinatorProtocol  {
     
     // MARK: Public properties
     weak var childDelegate: ChildCoordinatorDelegate?
@@ -43,10 +43,14 @@ extension HomeCoordinator: UpdateSpendControllerDelegate {
     }
 }
 
-extension HomeCoordinator: HomeControllerDelegate {
+extension HomeCoordinator: HomeControllerDelegate, AddSpendControllerDelegate {
+    func goToHome() {
+        
+    }
+    
     
     func goToAddSpend() {
-        let addSpendVC = HomeFactory.addSpend()
+        let addSpendVC = HomeFactory.addSpend(delegate: self)
         navigationController.pushViewController(addSpendVC, animated: true)
     }
 }

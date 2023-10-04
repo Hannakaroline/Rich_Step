@@ -16,7 +16,6 @@ protocol HomeViewModelProtocol {
 class HomeView: UIView {
     
     // MARK: - UI Components
-    @IBOutlet var title: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Private properties
@@ -38,6 +37,5 @@ extension HomeView {
     
     private func setup() {
         tableViewDataSource.tableView = tableView
-        title.text = "Spending List"
     }
 }

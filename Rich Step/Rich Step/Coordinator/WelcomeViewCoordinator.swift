@@ -28,9 +28,9 @@ class WelcomeViewCoordinator: CoordinatorProtocol, WelcomeViewControllerDelegate
     }
     
     func goToHome() {
-        let homeController = HomeCoordinator()
-        homeController.childDelegate = self
-        childCoordinator = homeController
-        navigationController.present(homeController.start(), animated: true)
+        let homeCoordinator = HomeCoordinator()
+        homeCoordinator.childDelegate = self
+        childCoordinator = homeCoordinator
+        navigationController.present(homeCoordinator.start(), animated: true)
     }
 }

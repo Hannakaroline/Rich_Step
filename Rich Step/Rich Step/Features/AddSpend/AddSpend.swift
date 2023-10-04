@@ -6,23 +6,46 @@
 //
 
 import UIKit
-protocol addSpendProtocol {
-    func didTapAddButton()
+
+protocol AddSpendViewModelProtocol {
+    var onSaved: (() -> Void)? { get }
+    func didTapAddButton(_ itemDesc: String, _ amount: Float, _ date: Date)
 }
 
 class AddSpend: UIView {
     
     // MARK: - UI Components
-    @IBOutlet private weak var dateTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet private weak var itemDescriptionTextField: UITextField!
     @IBOutlet private weak var amountTextField: UITextField!
     @IBOutlet private weak var addButton: UIButton!
     
     // MARK: - Private properties
+    private var viewModel: AddSpendViewModelProtocol?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupButton()
     }
     
     //  MARK: - BindIn
-    func bindIn() { }
+    func bindIn(viewModel: AddSpendViewModel) {
+        viewModel.onSaved = { [weak self] in
+            //go to home
+        }
+        self.viewModel = viewModel
+    }
+    
+    // MARK: - Actions
+    @objc func didTapAddButton() {
+        let desc = itemDescriptionTextField.text ?? ""
+        let amount = amountTextField.text ?? "0.0"
+        let date = datePicker.date
+        
+        viewModel?.didTapAddButton(desc, NSString(string: amount).floatValue, date)
+    }
+    
+    func setupButton() {
+        addButton.addTarget(self, action: #selector(didTapAddButton), for: .touchUpInside)
+    }
 }

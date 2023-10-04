@@ -19,6 +19,7 @@ class UpdateSpendController<ViewModel: UpdateSpendViewModelProtocol>: UIViewCont
     // MARK: Init
     init(viewModel: ViewModel, delegate: UpdateSpendControllerDelegate?) {
         self.viewModel = viewModel
+        self.delegate = delegate
         self.contentView = UpdateSpend.loadNib()
         super.init(nibName: nil, bundle: nil)
     }

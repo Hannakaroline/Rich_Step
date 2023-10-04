@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HomeViewProtocol: HomeViewModelProtocol {
     var onTapAddButton: (() -> Void)? { get set }
@@ -16,10 +17,11 @@ class HomeViewModel: HomeViewProtocol {
     // MARK: - Public properties
     var onTapAddButton: (() -> Void)?
     var sections: [MonthlySpendingsSection] {
-        [spending()]
+        [getAllSpendings()]
     }
     let formatter = DateFormatter()
     let homeCoordinator: HomeCoordinator
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     // MARK: - Init
     init(homeCoordinator: HomeCoordinator){
@@ -40,22 +42,26 @@ class HomeViewModel: HomeViewProtocol {
         return formatter.date(from: date)
     }
     
-    func spending() -> MonthlySpendingsSection  {
-        let spendings = SpendingsRepository.instance.getSpendings()
-        
-        let spendingsByMonth = Dictionary(
-            grouping: spendings,
-            by: { mapMonthOfYear(date: $0.date)})
-        
-        let viewModels = spendingsByMonth.map {
-            MonthlySpendingViewModel(
-                monthlySpending: MonthlySpending(monthOfYear: $0, spendings: $1)
+    func getAllSpendings() -> MonthlySpendingsSection {
+        do {
+            let spendings = try context.fetch(Spending.fetchRequest())
+            let spendingsByMonth = Dictionary(
+                grouping: spendings,
+                by: { mapMonthOfYear(date: $0.date ?? Date.now)})
+            
+            let viewModels = spendingsByMonth.map {
+                MonthlySpendingViewModel(
+                    monthlySpending: MonthlySpending(monthOfYear: $0, spendings: $1)
+                )
+            }
+            
+            return MonthlySpendingsSection(
+                viewModels: viewModels,
+                homeCoordinator: homeCoordinator
             )
+        } catch {
+            // Error
+            return MonthlySpendingsSection(viewModels: [], homeCoordinator: homeCoordinator)
         }
-        
-        return MonthlySpendingsSection(
-            viewModels: viewModels,
-            homeCoordinator: homeCoordinator
-        )
     }
 }

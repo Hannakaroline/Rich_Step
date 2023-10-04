@@ -6,16 +6,21 @@
 //
 
 import UIKit
+protocol AddSpendControllerDelegate: AnyObject {
+    func goToHome()
+}
 
 class AddSpendController: UIViewController {
     
     // MARK: - Private properties
     private let contentView: AddSpend
-//    private let viewModel: ViewModel
+    private var viewModel: AddSpendViewModel
+    private weak var delegate: AddSpendControllerDelegate?
 
     // MARK: - Init
-    init() {
-//        self.viewModel = viewModel
+    init(viewModel: AddSpendViewModel, delegate: AddSpendControllerDelegate?) {
+        self.viewModel = viewModel
+        self.delegate = delegate
         self.contentView = AddSpend.loadNib()
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,7 +37,11 @@ class AddSpendController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        contentView.bindIn(viewModel: viewModel)
+        bind()
         title = "Add Spend"
+    }
+    
+    private func bind() {
+        contentView.bindIn(viewModel: viewModel)
     }
 }

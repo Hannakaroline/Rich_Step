@@ -42,11 +42,11 @@ class HomeController<ViewModel: HomeViewProtocol>: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationController?.view.backgroundColor = UIColor.systemBlue
-//        UINavigationBar.appearance().isTranslucent = false
+        navigationController?.view.backgroundColor = UIColor.systemBlue
+        UINavigationBar.appearance().isTranslucent = false
         title = "Home"
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
         bind()
     }
     

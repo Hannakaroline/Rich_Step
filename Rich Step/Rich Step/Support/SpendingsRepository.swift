@@ -16,16 +16,16 @@ class SpendingsRepository {
     private init() {
         formatter.dateFormat = "yyyy/MM/dd"
         spendings = [Spending]()
-        spendings.append(contentsOf: [
-            Spending(id: 1, date: parseMonth("2023/09/15")!, description: "Shopping", amount: 100),
-            Spending(id: 2, date: parseMonth("2023/08/01")!, description: "Wifi", amount: 100),
-            Spending(id: 3, date: parseMonth("2023/07/01")!, description: "Gas", amount: 100),
-            Spending(id: 4, date: parseMonth("2023/07/01")!, description: "Water", amount: 100),
-            Spending(id: 5, date: parseMonth("2023/06/01")!, description: "Supermarket", amount: 100),
-            Spending(id: 6, date: parseMonth("2023/06/01")!, description: "Anime", amount: 100),
-            Spending(id: 7, date: parseMonth("2023/05/01")!, description: "Gym", amount: 100),
-            Spending(id: 8, date: parseMonth("2023/05/01")!, description: "House rent", amount: 100),
-        ])
+//        spendings.append(contentsOf: [
+//            Spending(id: 1, date: parseMonth("2023/09/15")!, description: "Shopping", amount: 100),
+//            Spending(id: 2, date: parseMonth("2023/08/01")!, description: "Wifi", amount: 100),
+//            Spending(id: 3, date: parseMonth("2023/07/01")!, description: "Gas", amount: 100),
+//            Spending(id: 4, date: parseMonth("2023/07/01")!, description: "Water", amount: 100),
+//            Spending(id: 5, date: parseMonth("2023/06/01")!, description: "Supermarket", amount: 100),
+//            Spending(id: 6, date: parseMonth("2023/06/01")!, description: "Anime", amount: 100),
+//            Spending(id: 7, date: parseMonth("2023/05/01")!, description: "Gym", amount: 100),
+//            Spending(id: 8, date: parseMonth("2023/05/01")!, description: "House rent", amount: 100),
+//        ])
     }
     
     private func parseMonth(_ date: String) -> Date? {

@@ -10,6 +10,7 @@ import UIKit
 class HomeFactory {
     static func home(coordinator: HomeCoordinator, delegate: HomeControllerDelegate) -> UIViewController {
         let viewModel = HomeViewModel(homeCoordinator: coordinator)
+
         return HomeController(viewModel: viewModel, delegate: delegate)
     }
     
@@ -23,7 +24,8 @@ class HomeFactory {
         return UpdateSpendController(viewModel: updateSpendViewModel, delegate: delegate)
     }
     
-    static func addSpend() -> UIViewController {
-        return AddSpendController()
+    static func addSpend(delegate: AddSpendControllerDelegate?) -> UIViewController {
+        let addSpendViewModel = AddSpendViewModel()
+        return AddSpendController(viewModel: addSpendViewModel, delegate: delegate)
     }
 }
