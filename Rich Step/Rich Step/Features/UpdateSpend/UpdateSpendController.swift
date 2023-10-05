@@ -7,17 +7,19 @@
 
 import UIKit
 
-protocol UpdateSpendControllerDelegate: AnyObject { }
+protocol UpdateSpendControllerDelegate: AnyObject {
+    func goToSpendDetails()
+}
 
-class UpdateSpendController<ViewModel: UpdateSpendViewModelProtocol>: UIViewController {
+class UpdateSpendController: UIViewController {
     
     // MARK: - Private properties
     private let contentView: UpdateSpend
-    private let viewModel: ViewModel
+    private let viewModel: UpdateSpendViewModel
     private weak var delegate: UpdateSpendControllerDelegate?
     
     // MARK: Init
-    init(viewModel: ViewModel, delegate: UpdateSpendControllerDelegate?) {
+    init(viewModel: UpdateSpendViewModel, delegate: UpdateSpendControllerDelegate?) {
         self.viewModel = viewModel
         self.delegate = delegate
         self.contentView = UpdateSpend.loadNib()
@@ -36,7 +38,14 @@ class UpdateSpendController<ViewModel: UpdateSpendViewModelProtocol>: UIViewCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentView.bindIn(viewModel: viewModel)
         title = "Spend Item Detail"
+        bind()
+    }
+    
+    private func bind() {
+        contentView.bindIn(viewModel: viewModel)
+        viewModel.onUpdated = { [weak self] in
+            self?.delegate?.goToSpendDetails()
+        }
     }
 }

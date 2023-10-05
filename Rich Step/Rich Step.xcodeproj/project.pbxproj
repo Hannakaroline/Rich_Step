@@ -13,6 +13,7 @@
 		F54464092ACD652F00C88A2F /* AddSpendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54464082ACD652F00C88A2F /* AddSpendViewModel.swift */; };
 		F544640F2ACD6FA400C88A2F /* Spending+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544640D2ACD6FA400C88A2F /* Spending+CoreDataClass.swift */; };
 		F54464102ACD6FA400C88A2F /* Spending+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544640E2ACD6FA400C88A2F /* Spending+CoreDataProperties.swift */; };
+		F54464122ACE6CC200C88A2F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54464112ACE6CC200C88A2F /* Util.swift */; };
 		F5A051DC2AC6C2FA00C27C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A051DB2AC6C2FA00C27C7B /* AppDelegate.swift */; };
 		F5A051DE2AC6C2FA00C27C7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A051DD2AC6C2FA00C27C7B /* SceneDelegate.swift */; };
 		F5A051E62AC6C2FA00C27C7B /* Rich_Step.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5A051E42AC6C2FA00C27C7B /* Rich_Step.xcdatamodeld */; };
@@ -87,6 +88,7 @@
 		F54464082ACD652F00C88A2F /* AddSpendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendViewModel.swift; sourceTree = "<group>"; };
 		F544640D2ACD6FA400C88A2F /* Spending+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F544640E2ACD6FA400C88A2F /* Spending+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F54464112ACE6CC200C88A2F /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F5A051D82AC6C2FA00C27C7B /* Rich Step.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rich Step.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A051DB2AC6C2FA00C27C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5A051DD2AC6C2FA00C27C7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				F5A052222AC6CD8700C27C7B /* UIView+Nib.swift */,
 				F5A052382AC7024D00C27C7B /* ReusableView.swift */,
 				F5A052682AC8109A00C27C7B /* UITableView+Reusable.swift */,
+				F54464112ACE6CC200C88A2F /* Util.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				F5A0525A2AC739D000C27C7B /* TableProtocols.swift in Sources */,
 				F5A052712AC839C700C27C7B /* WelcomeViewModel.swift in Sources */,
 				F5A052232AC6CD8700C27C7B /* UIView+Nib.swift in Sources */,
+				F54464122ACE6CC200C88A2F /* Util.swift in Sources */,
 				F5A052412AC7262E00C27C7B /* HomeCoordinator.swift in Sources */,
 				F5A0526C2AC8287800C27C7B /* MonthlySpendingsCell.swift in Sources */,
 				F5A052742AC84ECD00C27C7B /* SpendDetail.swift in Sources */,

@@ -8,6 +8,9 @@
 import UIKit
 
 class DetailsCellSection: TableSectionProtocol, UpdateSpendControllerDelegate {
+    func goToSpendDetails() {
+        
+    }
     
     // MARK: - Private properties
     private let viewModels: [DetailsCellViewModel]

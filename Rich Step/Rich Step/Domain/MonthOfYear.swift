@@ -17,4 +17,10 @@ struct MonthOfYear: Hashable {
     }
 }
 
+extension MonthOfYear: Comparable {
+    static func <(lhs: MonthOfYear, rhs: MonthOfYear) -> Bool {
+        lhs.year < rhs.year || lhs.month < rhs.month
+    }
+}
+
 

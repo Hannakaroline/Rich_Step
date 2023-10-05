@@ -54,7 +54,7 @@ class HomeViewModel: HomeViewProtocol {
                 MonthlySpendingViewModel(
                     monthlySpending: MonthlySpending(monthOfYear: $0, spendings: $1)
                 )
-            }
+            }.sorted(by: {$0.monthlySpending.monthOfYear > $1.monthlySpending.monthOfYear})
             
             return MonthlySpendingsSection(
                 viewModels: viewModels,

@@ -5,37 +5,34 @@
 //  Created by Hanna on 02/10/23.
 //
 
-import Foundation
+import UIKit
 
-protocol UpdateSpendProtocol: UpdateSpendViewModelProtocol {
-    var onTapUpdateAmount: (() -> Void)? { get set }
+class UpdateSpendViewModel: UpdateSpendViewModelProtocol {
+    
+    //  MARK: - Public properties
+    var onUpdated: (() -> Void)?
+    // fix date
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    func didTapUpdate(_ itemDesc: String, _ amount: Float) {
+        onTapItemUpdateButton(UpdateSpendDTO(date: Date.now, itemDescription: itemDesc, amount: amount))
+    }
+    
+    func onTapItemUpdateButton(_ dto: UpdateSpendDTO) {
+        let spendig = Spending(context: context)
+        spendig.desc = dto.itemDescription
+        spendig.amount = dto.amount
+        do {
+            try context.save()
+            onUpdated?()
+        } catch {
+            // Handle error
+        }
+    }
 }
 
-class UpdateSpendViewModel: UpdateSpendProtocol {
-    
-    // MARK: - Public properties
-    var onTapUpdateAmount: (() -> Void)?
-    var spending: Spending
-    
-    init(spending: Spending) {
-        self.spending = spending
-    }
-    
-    var date: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        return formatter.string(from: spending.date ?? Date.now)
-    }
-    
-    var itemDescription: String? {
-        return spending.description
-    }
-    
-    var amount: Float {
-        return spending.amount
-    }
-    
-    func didTapUpdate() {
-        onTapUpdateAmount?()
-    }
+struct UpdateSpendDTO {
+    var date: Date
+    var itemDescription: String
+    var amount: Float
 }

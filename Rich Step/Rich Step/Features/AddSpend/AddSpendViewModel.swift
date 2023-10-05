@@ -8,9 +8,9 @@
 import UIKit
 
 class AddSpendViewModel: AddSpendViewModelProtocol {
-    var onSaved: (() -> Void)?
     
     //  MARK: - Public properties
+    var onSaved: (() -> Void)?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func didTapAddButton(_ itemDesc: String, _ amount: Float, _ date: Date) {

@@ -9,6 +9,7 @@ import UIKit
 
 protocol AddSpendViewModelProtocol {
     var onSaved: (() -> Void)? { get }
+    
     func didTapAddButton(_ itemDesc: String, _ amount: Float, _ date: Date)
 }
 

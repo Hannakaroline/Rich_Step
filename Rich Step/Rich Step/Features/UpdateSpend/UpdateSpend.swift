@@ -8,11 +8,9 @@
 import UIKit
 
 protocol UpdateSpendViewModelProtocol {
-    var date: String { get }
-    var amount: Float { get }
-    var itemDescription: String? { get }
-
-    func didTapUpdate()
+    var onUpdated: (() -> Void)? { get }
+    
+    func didTapUpdate(_ itemDesc: String, _ amount: Float)
 }
 
 class UpdateSpend: UIView {
@@ -34,13 +32,13 @@ class UpdateSpend: UIView {
     //  MARK: - BindIn
     func bindIn(viewModel: UpdateSpendViewModelProtocol) {
         self.viewModel = viewModel
-        dateTextField.text = viewModel.date
-        itemDescriptionTextField.text = viewModel.itemDescription
-        amountTextField.text = String(viewModel.amount)
     }
     
     @objc func didTapUpdate() {
-        viewModel?.didTapUpdate()
+        let desc = itemDescriptionTextField.text ?? ""
+        let amount = amountTextField.text ?? "0.0"
+        
+        viewModel?.didTapUpdate(desc, NSString(string: amount).floatValue)
     }
 }
 
