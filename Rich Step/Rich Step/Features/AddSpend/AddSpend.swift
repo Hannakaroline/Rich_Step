@@ -16,11 +16,10 @@ protocol AddSpendViewModelProtocol {
 class AddSpend: UIView {
     
     // MARK: - UI Components
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var dateTextField: UITextField!
     @IBOutlet private weak var itemDescriptionTextField: UITextField!
     @IBOutlet private weak var amountTextField: UITextField!
     @IBOutlet private weak var addButton: UIButton!
-    
     // MARK: - Private properties
     private var viewModel: AddSpendViewModelProtocol?
     
@@ -38,12 +37,22 @@ class AddSpend: UIView {
     @objc func didTapAddButton() {
         let desc = itemDescriptionTextField.text ?? ""
         let amount = amountTextField.text ?? "0.0"
-        let date = datePicker.date
-        
+        let date = Util.instance.parseDate(date: dateTextField.text ?? "")
+
         viewModel?.didTapAddButton(desc, NSString(string: amount).floatValue, date)
+    }
+    
+    @objc func dateChange(datePicker: UIDatePicker) {
+        dateTextField.text = Util.instance.format(date: datePicker.date)
     }
     
     func setupButton() {
         addButton.addTarget(self, action: #selector(didTapAddButton), for: .touchUpInside)
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(dateChange), for: UIControl.Event.valueChanged)
+        datePicker.frame.size = CGSize(width: 0, height: 300)
+        datePicker.preferredDatePickerStyle = .wheels
+        dateTextField.inputView = datePicker
     }
 }

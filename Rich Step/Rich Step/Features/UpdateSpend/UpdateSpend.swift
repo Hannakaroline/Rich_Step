@@ -64,7 +64,6 @@ extension UpdateSpend {
         datePicker.addTarget(self, action: #selector(dateChange), for: UIControl.Event.valueChanged)
         datePicker.frame.size = CGSize(width: 0, height: 300)
         datePicker.preferredDatePickerStyle = .wheels
-        
         dateTextField.inputView = datePicker
     }
     
