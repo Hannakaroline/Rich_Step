@@ -32,9 +32,16 @@ class SpendDetail: UIView {
     // MARK: - BindIn
     func bindIn(viewModel: SpendDetailProtocol) {
         self.viewModel = viewModel
+        self.tableViewDataSource.sections = viewModel.sections
         let formattedAmount = "¥" + viewModel.totalAmount!
         valueLabel.text = formattedAmount
-        self.tableViewDataSource.sections = viewModel.sections
+    }
+    
+    func reloadData() {
+        self.tableViewDataSource.sections = viewModel?.sections ?? []
+        self.tableViewDataSource.tableView?.reloadData()
+        let formattedAmount = "¥" + (viewModel?.totalAmount ?? "0")
+        valueLabel.text = formattedAmount
     }
 }
 

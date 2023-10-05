@@ -38,4 +38,9 @@ class SpendDetailsController<ViewModel: SpendDetailProtocol>: UIViewController {
         contentView.bindIn(viewModel: viewModel)
         title = "Spend Detail \(viewModel.monthOfYear)"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        contentView.reloadData()
+    }
 }

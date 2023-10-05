@@ -8,9 +8,9 @@
 import UIKit
 
 protocol DetailsTableViewCellProtocol {
-    var description: String? { get }
-    var date: String? { get }
-    var amount: String? { get }
+    var description: String { get }
+    var date: String { get }
+    var amount: String { get }
 }
 
 class DetailsTableViewCell: UITableViewCell {
@@ -19,7 +19,6 @@ class DetailsTableViewCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var valueLabel: UILabel!
-    @IBOutlet private weak var openButton: UIButton!
     
     // MARK: - Private properties
     var viewModel: DetailsTableViewCellProtocol?
@@ -33,7 +32,7 @@ class DetailsTableViewCell: UITableViewCell {
         self.viewModel = viewModel
         nameLabel.text = viewModel.description
         dateLabel.text = viewModel.date
-        let formattedAmount = "¥" + viewModel.amount!
+        let formattedAmount = "¥" + viewModel.amount
         valueLabel.text = formattedAmount
     }
     
@@ -47,7 +46,7 @@ extension DetailsTableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 4, bottom: 16, right: 4))
         contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.layer.borderWidth = 1.0
         contentView.layer.cornerRadius = 8

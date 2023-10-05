@@ -23,4 +23,19 @@ extension MonthOfYear: Comparable {
     }
 }
 
-
+extension MonthOfYear {
+    func start() -> Date {
+        let components = DateComponents(
+            timeZone: TimeZone.current,
+            year: year,
+            month: month,
+            day: 1
+        )
+        return Calendar(identifier: .gregorian).date(from: components)!
+    }
+    
+    func end() -> Date {
+        return Calendar(identifier: .gregorian)
+            .date(byAdding: DateComponents(month: 1, second: -1), to: start())!
+    }
+}

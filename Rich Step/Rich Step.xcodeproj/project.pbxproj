@@ -340,8 +340,8 @@
 				F5A052772AC8531000C27C7B /* DetailsCell */,
 				F5A052752AC8517600C27C7B /* SpendDetail.xib */,
 				F5A052732AC84ECD00C27C7B /* SpendDetail.swift */,
-				F5A052802AC93C5200C27C7B /* SpendDetailsController.swift */,
 				F5A052822AC93C6200C27C7B /* SpendDetailsViewModel.swift */,
+				F5A052802AC93C5200C27C7B /* SpendDetailsController.swift */,
 			);
 			path = "Spend Details";
 			sourceTree = "<group>";

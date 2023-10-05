@@ -15,7 +15,7 @@ class HomeFactory {
     }
     
     static func spendDetails(coordinator: HomeCoordinator, delegate: SpendControllerDelegate?, monthlySpending: MonthlySpending) -> UIViewController {
-        let detailsViewModel = SpendDetailsViewModel(homeCoordinator: coordinator, monthlySpending: monthlySpending)
+        let detailsViewModel = SpendDetailsViewModel(homeCoordinator: coordinator, currentMonthOfYear: monthlySpending.monthOfYear )
         return SpendDetailsController(viewModel: detailsViewModel, delegate: delegate)
     }
     

@@ -30,8 +30,4 @@ class MonthlySpendingViewModel: MonthlySpendingsCellViewModel {
     init(monthlySpending: MonthlySpending) {
         self.monthlySpending = monthlySpending
     }
-    
-    func didTapCell() {
-        onTapDetailsButton?()
-    }
 }

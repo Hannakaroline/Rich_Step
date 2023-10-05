@@ -5,7 +5,7 @@
 //  Created by Hanna on 01/10/23.
 //
 
-import Foundation
+import UIKit
 
 class SpendDetailsViewModel: SpendDetailProtocol {
     
@@ -14,28 +14,46 @@ class SpendDetailsViewModel: SpendDetailProtocol {
         [detailsSection()]
     }
     let homeCoordinator: HomeCoordinator
-    let monthlySpending: MonthlySpending
+    let currentMonthOfYear: MonthOfYear
+    var spendings: [Spending]
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var totalAmount: String? {
-        let value = monthlySpending.spendings.reduce(0, { $0 + $1.amount})
+        let value = spendings.reduce(0, { $0 + $1.amount})
         return String(value)
     }
     
     var monthOfYear: String {
-        "\(monthlySpending.monthOfYear.year)/\(monthlySpending.monthOfYear.month)"
+        "\(currentMonthOfYear.year)/\(currentMonthOfYear.month)"
     }
     
     // MARK: - Init
-    init(homeCoordinator: HomeCoordinator, monthlySpending: MonthlySpending) {
+    init(homeCoordinator: HomeCoordinator, currentMonthOfYear: MonthOfYear) {
+        spendings = []
         self.homeCoordinator = homeCoordinator
-        self.monthlySpending = monthlySpending
+        self.currentMonthOfYear = currentMonthOfYear
     }
     
     private func detailsSection() -> DetailsCellSection {
-
-        DetailsCellSection(
-            viewModels: monthlySpending.spendings.map {
-                DetailsCellViewModel(spending: $0)
-            }, homeCoordinator: homeCoordinator)
+        do {
+            
+            let fromDate = currentMonthOfYear.start()
+            let toDate = currentMonthOfYear.end()
+            let request = Spending.fetchRequest()
+            request.predicate = NSPredicate(
+                format: "date >= %@ && date <= %@", argumentArray: [fromDate, toDate]
+            )
+            
+            spendings = try context.fetch(request)
+            return DetailsCellSection(
+                viewModels: spendings.map {
+                    DetailsCellViewModel(spending: $0)
+                },
+                homeCoordinator: homeCoordinator)
+        } catch {
+            // error
+            return DetailsCellSection(viewModels: [], homeCoordinator: homeCoordinator)
+        }
     }
 }

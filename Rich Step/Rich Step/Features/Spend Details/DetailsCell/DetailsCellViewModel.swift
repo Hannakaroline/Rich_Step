@@ -17,15 +17,15 @@ class DetailsCellViewModel: DetailsTableViewCellProtocol {
         self.spending = spending
     }
     
-    var description: String? {
-        return spending.desc
+    var description: String {
+        return spending.desc ?? ""
     }
     
-    var date: String? {
-        return "\(spending.date)"
+    var date: String {
+        return Util.instance.format(date: spending.date)
     }
     
-    var amount: String? {
+    var amount: String {
         return "\(spending.amount)"
     }
 }
