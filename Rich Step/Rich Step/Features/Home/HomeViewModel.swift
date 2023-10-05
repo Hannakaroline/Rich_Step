@@ -13,6 +13,7 @@ protocol HomeViewProtocol: HomeViewModelProtocol {
 }
 
 class HomeViewModel: HomeViewProtocol {
+    var onFetchSectionsChange: (([MonthlySpendingsSection]) -> Void)?
 
     // MARK: - Public properties
     var onTapAddButton: (() -> Void)?

@@ -31,6 +31,13 @@ class HomeView: UIView {
     func bindIn(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         self.tableViewDataSource.sections = viewModel.sections
+        self.tableViewDataSource.tableView?.reloadData()
+
+    }
+    
+    func reloadData() {
+        self.tableViewDataSource.sections = viewModel?.sections ?? []
+        self.tableViewDataSource.tableView?.reloadData()
     }
 }
 extension HomeView {

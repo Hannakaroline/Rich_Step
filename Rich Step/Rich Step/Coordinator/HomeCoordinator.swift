@@ -44,10 +44,10 @@ extension HomeCoordinator: UpdateSpendControllerDelegate {
 }
 
 extension HomeCoordinator: HomeControllerDelegate, AddSpendControllerDelegate {
-    func goToHome() {
-        
-    }
     
+    func goToHome() {
+        navigationController.popViewController(animated: true)
+    }
     
     func goToAddSpend() {
         let addSpendVC = HomeFactory.addSpend(delegate: self)

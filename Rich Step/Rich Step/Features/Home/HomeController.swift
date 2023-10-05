@@ -50,6 +50,10 @@ class HomeController<ViewModel: HomeViewProtocol>: UIViewController {
         bind()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        contentView.reloadData()
+    }
+    
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
         viewModel.onTapAddButton = { [weak self] in

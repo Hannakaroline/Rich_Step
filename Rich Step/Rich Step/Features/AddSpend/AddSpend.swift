@@ -30,9 +30,6 @@ class AddSpend: UIView {
     
     //  MARK: - BindIn
     func bindIn(viewModel: AddSpendViewModel) {
-        viewModel.onSaved = { [weak self] in
-            //go to home
-        }
         self.viewModel = viewModel
     }
     

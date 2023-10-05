@@ -43,5 +43,8 @@ class AddSpendController: UIViewController {
     
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
+        viewModel.onSaved = { [weak self] in
+            self?.delegate?.goToHome()
+        }
     }
 }
