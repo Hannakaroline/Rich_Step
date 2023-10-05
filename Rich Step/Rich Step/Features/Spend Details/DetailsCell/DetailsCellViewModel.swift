@@ -18,7 +18,7 @@ class DetailsCellViewModel: DetailsTableViewCellProtocol {
     }
     
     var description: String? {
-        return spending.description
+        return spending.desc
     }
     
     var date: String? {
