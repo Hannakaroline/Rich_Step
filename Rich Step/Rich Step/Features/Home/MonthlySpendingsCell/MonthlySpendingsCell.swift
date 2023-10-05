@@ -15,9 +15,9 @@ protocol MonthlySpendingsCellProtocol {
 class MonthlySpendingsCell: UITableViewCell {
 
     // MARK: - UI Components
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var valueLabel: UILabel!
-    @IBOutlet weak var cardView: UIView!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet private weak var cardView: UIView!
     
     // MARK: - Private properties
     private var viewModel: MonthlySpendingsCellProtocol?

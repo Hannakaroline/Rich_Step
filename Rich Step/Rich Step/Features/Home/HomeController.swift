@@ -58,9 +58,9 @@ class HomeController<ViewModel: HomeViewProtocol>: UIViewController {
     }
     
     func navigationstyle() {
+        title = "Home"
         navigationController?.view.backgroundColor = UIColor.systemBlue
         UINavigationBar.appearance().isTranslucent = false
-        title = "Home"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
         navigationItem.rightBarButtonItem?.tintColor = UIColor.white
     }

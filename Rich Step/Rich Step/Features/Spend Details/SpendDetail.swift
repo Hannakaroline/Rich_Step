@@ -16,9 +16,9 @@ protocol SpendDetailProtocol {
 class SpendDetail: UIView {
     
     // MARK: - UI Components
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var valueLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak  var titleLabel: UILabel!
+    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
     
     // MARK: Private properties
     private var viewModel: SpendDetailProtocol?

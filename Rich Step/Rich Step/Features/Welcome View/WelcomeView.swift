@@ -13,8 +13,8 @@ protocol WelcomeViewModelProtocol {
 class WelcomeView: UIView {
     
     // MARK: - UI Components
-    @IBOutlet var startButton: UIButton!
-    @IBOutlet var logoImage: UIImageView!
+    @IBOutlet private weak var startButton: UIButton!
+    @IBOutlet private weak var logoImage: UIImageView!
 
     
     // MARK: - Private properties

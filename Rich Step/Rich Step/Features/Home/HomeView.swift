@@ -16,7 +16,7 @@ protocol HomeViewModelProtocol {
 class HomeView: UIView {
     
     // MARK: - UI Components
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     // MARK: Private properties
     private var viewModel: HomeViewModelProtocol?
@@ -32,7 +32,6 @@ class HomeView: UIView {
         self.viewModel = viewModel
         self.tableViewDataSource.sections = viewModel.sections
         self.tableViewDataSource.tableView?.reloadData()
-
     }
     
     func reloadData() {
