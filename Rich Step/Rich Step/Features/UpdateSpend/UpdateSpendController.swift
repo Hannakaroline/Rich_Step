@@ -42,6 +42,7 @@ class UpdateSpendController: UIViewController {
         bind()
     }
     
+    // MARK: - Bind
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
         viewModel.onUpdated = { [weak self] in

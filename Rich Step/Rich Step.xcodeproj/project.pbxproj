@@ -171,8 +171,8 @@
 			children = (
 				F54464042ACD608100C88A2F /* AddSpend.xib */,
 				F54464062ACD618C00C88A2F /* AddSpend.swift */,
-				F54464022ACD5FC700C88A2F /* AddSpendController.swift */,
 				F54464082ACD652F00C88A2F /* AddSpendViewModel.swift */,
+				F54464022ACD5FC700C88A2F /* AddSpendController.swift */,
 			);
 			path = AddSpend;
 			sourceTree = "<group>";

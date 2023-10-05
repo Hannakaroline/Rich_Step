@@ -41,6 +41,7 @@ class WelcomeViewController<ViewModel: WelcomeViewProtocol>: UIViewController {
         bind()
     }
     
+    // MARK: - Bind
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
         

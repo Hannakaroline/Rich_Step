@@ -24,7 +24,7 @@ class HomeView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setup()
+        tableViewDataSource.tableView = tableView
     }
     
     // MARK: - Bind
@@ -34,14 +34,9 @@ class HomeView: UIView {
         self.tableViewDataSource.tableView?.reloadData()
     }
     
+    // MARK: - reload data
     func reloadData() {
         self.tableViewDataSource.sections = viewModel?.sections ?? []
         self.tableViewDataSource.tableView?.reloadData()
-    }
-}
-extension HomeView {
-    
-    private func setup() {
-        tableViewDataSource.tableView = tableView
     }
 }

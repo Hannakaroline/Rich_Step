@@ -12,7 +12,6 @@ protocol WelcomeViewProtocol: WelcomeViewModelProtocol {
 }
 
 class WelcomeViewModel: WelcomeViewProtocol {
-    var titleLabel: String = ""
     
     var onTapStartButton: (() -> Void)? 
     

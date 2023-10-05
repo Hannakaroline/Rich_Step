@@ -31,13 +31,14 @@ class HomeController<ViewModel: HomeViewProtocol>: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Actions
+    @objc func didTapAdd() {
+        viewModel.didTapAddButton()
+    }
+    
     // MARK: - Lifecycle
     override func loadView() {
         view = contentView
-    }
-    
-    @objc func didTapAdd() {
-        viewModel.didTapAddButton()
     }
     
     override func viewDidLoad() {
@@ -50,6 +51,7 @@ class HomeController<ViewModel: HomeViewProtocol>: UIViewController {
         contentView.reloadData()
     }
     
+    // MARK: - Bind
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
         viewModel.onTapAddButton = { [weak self] in
@@ -57,6 +59,7 @@ class HomeController<ViewModel: HomeViewProtocol>: UIViewController {
         }
     }
     
+    // MARK: - Navigation Style
     func navigationstyle() {
         title = "Home"
         navigationController?.view.backgroundColor = UIColor.systemBlue

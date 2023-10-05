@@ -13,7 +13,6 @@ protocol HomeViewProtocol: HomeViewModelProtocol {
 }
 
 class HomeViewModel: HomeViewProtocol {
-    var onFetchSectionsChange: (([MonthlySpendingsSection]) -> Void)?
 
     // MARK: - Public properties
     var onTapAddButton: (() -> Void)?
@@ -23,7 +22,8 @@ class HomeViewModel: HomeViewProtocol {
     let formatter = DateFormatter()
     let homeCoordinator: HomeCoordinator
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    var onFetchSectionsChange: (([MonthlySpendingsSection]) -> Void)?
+
     // MARK: - Init
     init(homeCoordinator: HomeCoordinator){
         self.homeCoordinator = homeCoordinator

@@ -20,6 +20,7 @@ class AddSpend: UIView {
     @IBOutlet private weak var itemDescriptionTextField: UITextField!
     @IBOutlet private weak var amountTextField: UITextField!
     @IBOutlet private weak var addButton: UIButton!
+    
     // MARK: - Private properties
     private var viewModel: AddSpendViewModelProtocol?
     
@@ -35,16 +36,18 @@ class AddSpend: UIView {
     
     // MARK: - Actions
     @objc func didTapAddButton() {
-        let desc = itemDescriptionTextField.text ?? ""
+        let desc = itemDescriptionTextField.text ?? "Without Description"
         let amount = amountTextField.text ?? "0.0"
         let date = Util.instance.parseDate(date: dateTextField.text ?? "")
-
+        
         viewModel?.didTapAddButton(desc, NSString(string: amount).floatValue, date)
     }
     
     @objc func dateChange(datePicker: UIDatePicker) {
         dateTextField.text = Util.instance.format(date: datePicker.date)
     }
+}
+extension AddSpend {
     
     func setupButton() {
         addButton.addTarget(self, action: #selector(didTapAddButton), for: .touchUpInside)
