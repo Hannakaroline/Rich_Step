@@ -8,9 +8,12 @@
 import UIKit
 
 protocol UpdateSpendViewModelProtocol {
+    var date: Date { get }
+    var amount: Float { get }
     var onUpdated: (() -> Void)? { get }
+    var desc: String { get }
     
-    func didTapUpdate(_ itemDesc: String, _ amount: Float)
+    func didTapUpdateButton(_ date: Date ,_ itemDesc: String, _ amount: Float)
 }
 
 class UpdateSpend: UIView {
@@ -26,30 +29,43 @@ class UpdateSpend: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setup()
     }
     
     //  MARK: - BindIn
     func bindIn(viewModel: UpdateSpendViewModelProtocol) {
         self.viewModel = viewModel
+        setup()
+        itemDescriptionTextField.text = viewModel.desc
+        amountTextField.text = "\(viewModel.amount)"
+        dateTextField.text = Util.instance.format(date: viewModel.date)
     }
     
-    @objc func didTapUpdate() {
+    @objc func didTapUpdateButton() {
         let desc = itemDescriptionTextField.text ?? ""
         let amount = amountTextField.text ?? "0.0"
+        let date = Util.instance.parseDate(date: dateTextField.text ?? "")
         
-        viewModel?.didTapUpdate(desc, NSString(string: amount).floatValue)
+        viewModel?.didTapUpdateButton(date, desc, NSString(string: amount).floatValue)
+    }
+
+    @objc func dateChange(datePicker: UIDatePicker) {
+        dateTextField.text = Util.instance.format(date: datePicker.date)
     }
 }
 
 extension UpdateSpend {
     
     private func setup() {
-        dateTextField.isEnabled = false
-        setupButton()
+        updateButton.addTarget(self, action: #selector(didTapUpdateButton), for: .touchUpInside)
+        
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.date = viewModel?.date ?? Date.now
+        datePicker.addTarget(self, action: #selector(dateChange), for: UIControl.Event.valueChanged)
+        datePicker.frame.size = CGSize(width: 0, height: 300)
+        datePicker.preferredDatePickerStyle = .wheels
+        
+        dateTextField.inputView = datePicker
     }
     
-    private func setupButton() {
-        updateButton.addTarget(self, action: #selector(didTapUpdate), for: .touchUpInside)
-    }
 }

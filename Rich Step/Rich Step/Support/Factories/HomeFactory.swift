@@ -20,7 +20,7 @@ class HomeFactory {
     }
     
     static func updateSpend(delegate: UpdateSpendControllerDelegate?, spending: Spending) -> UIViewController {
-        let updateSpendViewModel = UpdateSpendViewModel()
+        let updateSpendViewModel = UpdateSpendViewModel(spending: spending)
         return UpdateSpendController(viewModel: updateSpendViewModel, delegate: delegate)
     }
     

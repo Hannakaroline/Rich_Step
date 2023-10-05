@@ -25,6 +25,10 @@ struct Util {
         }
         return dateFormatter.string(for: date) ?? ""
     }
+    
+    func parseDate(date: String) -> Date {
+        return dateFormatter.date(from: date) ?? Date.now
+    }
 }
 
 extension Date {

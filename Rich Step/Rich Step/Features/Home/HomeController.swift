@@ -42,12 +42,8 @@ class HomeController<ViewModel: HomeViewProtocol>: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.view.backgroundColor = UIColor.systemBlue
-        UINavigationBar.appearance().isTranslucent = false
-        title = "Home"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
         bind()
+        navigationstyle()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,5 +55,13 @@ class HomeController<ViewModel: HomeViewProtocol>: UIViewController {
         viewModel.onTapAddButton = { [weak self] in
             self?.delegate?.goToAddSpend()
         }
+    }
+    
+    func navigationstyle() {
+        navigationController?.view.backgroundColor = UIColor.systemBlue
+        UINavigationBar.appearance().isTranslucent = false
+        title = "Home"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
     }
 }

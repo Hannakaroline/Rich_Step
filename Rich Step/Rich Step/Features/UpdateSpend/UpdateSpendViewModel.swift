@@ -10,18 +10,38 @@ import UIKit
 class UpdateSpendViewModel: UpdateSpendViewModelProtocol {
     
     //  MARK: - Public properties
-    var onUpdated: (() -> Void)?
-    // fix date
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
-    func didTapUpdate(_ itemDesc: String, _ amount: Float) {
-        onTapItemUpdateButton(UpdateSpendDTO(date: Date.now, itemDescription: itemDesc, amount: amount))
+    let spending: Spending
+    var onUpdated: (() -> Void)?
+    
+    var date: Date {
+        spending.date ?? Date.now
+    }
+    
+    var amount: Float {
+        spending.amount
+    }
+    
+    var desc: String {
+        spending.desc ?? ""
+    }
+    
+    // MARK: - Init
+    init(spending: Spending) {
+        self.spending = spending
+    }
+    
+    func didTapUpdateButton(_ date: Date, _ itemDesc: String, _ amount: Float) {
+        onTapItemUpdateButton(
+            UpdateSpendDTO(date: date,
+                           itemDescription: itemDesc,
+                           amount: amount))
     }
     
     func onTapItemUpdateButton(_ dto: UpdateSpendDTO) {
-        let spendig = Spending(context: context)
-        spendig.desc = dto.itemDescription
-        spendig.amount = dto.amount
+        spending.date = dto.date
+        spending.desc = dto.itemDescription
+        spending.amount = dto.amount
         do {
             try context.save()
             onUpdated?()
